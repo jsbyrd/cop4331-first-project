@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script type="text/javascript" src="js/code.js"></script>
+  <title>Login</title>
+  <title>Link CSS to HTML</title>
+</head>
+
+<body>
+  <div class="login-7sb">
+
+    <div class="rectangle-1-Ce9">
+    </div>
+    <div class="rectangle-2-7WD">
+    </div>
+    <img class="x683-1-E53" src="./assets/x683-1.png" />
+    <p class="event-planner-wEM">Event Planner</p>
+    <p class="login-Q7w">Login</p>
+
+    <p class="login-nnh">Login</p>
+    <p class="sign-up-g7P">Sign up</p>
+    <input type="button" id="headerButton" class="header" onclick="window.location.href='sign-up.html';"
+      value="Sign up">
+
+    <img class="vector-1-hRo" src="./assets/vector-1-auj.png" />
+
+    <div class="container">
+      <img class="envelope-closed-1-Xp9" src="./assets/envelope-closed-1.png" />
+      <form id="login" method="get" action="Login.php">
+        <div class="row">
+          <div class="col-75">
+            <input type="text" id="loginName" name="login" placeholder="username..">
+          </div>
+        </div>
+        <br><br>
+        <div class="row">
+          <div class="col-75">
+            <input type="password" id="loginPassword" name="password" placeholder="password..">
+          </div>
+        </div>
+        <div class="row">
+
+          <!-- <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Log in </button> -->
+          <input type="button" id="loginButton" class="buttons" onclick="doLogin()" value="Submit">
+        </div>
+        <span class="error" id="loginResult"></span>
+        <div class="row">
+
+          <!-- <button type="button" id="loginButton" class="buttons" onclick="doLogin();"> Log in </button> -->
+          <input type="button" id="signButton" class="signup" onclick="window.location.href='index.html';"
+            value="Not a member? Signup">
+        </div>
+      </form>
+</body>
