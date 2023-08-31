@@ -1,0 +1,225 @@
+
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 100%;
+}
+.login {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.login-details {
+  box-sizing: border-box;
+  padding: 2.7rem 3.9rem 32.9rem 2.4rem;
+  height: 102.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.ref-icon {
+  width: 25%;
+}
+
+.birdie-icon {
+  width: 17.2rem;
+  height: 15.6rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+  background-color: #ccf3fb;
+  border-radius: 50%;
+}
+
+.login-box {
+  margin-left: 17.2rem;
+  width: 48.5rem;
+  flex-shrink: 0;
+}
+
+.login-frame {
+  margin-bottom: 4.1rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.login-phrase {
+  margin: 0rem 8.5rem 6.4rem 0rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.login-frame2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.login-input {
+  margin-bottom: 2.3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.user-input {
+  margin-bottom: 2.4rem;
+  box-sizing: border-box;
+  padding: 2rem 2rem 1.8rem 2rem;
+  width: 40rem;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.275;
+  color: rgba(4, 1, 1, 0.793);
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  border: solid 0.2rem rgba(0, 0, 0, 0.400000006);
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.login-frame3 {
+  width: 100%;
+  height: 9.7rem;
+  flex-shrink: 0;
+}
+
+.password-input {
+  margin: 0rem 8.5rem 3.7rem 0rem;
+  box-sizing: border-box;
+  padding: 2rem 2rem 1.8rem 2rem;
+  width: 40rem;
+  height: 6rem;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.275;
+  color: rgba(0, 0, 0, 0.777);
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  border: solid 0.2rem rgba(0, 0, 0, 0.400000006);
+  border-radius: 1rem;
+}
+
+.bottom-frame {
+  width: 40rem;
+  flex-shrink: 0;
+}
+
+.login-btn {
+  margin-bottom: 1.6rem;
+  width: 100%;
+  height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #ffffff;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 1rem;
+}
+
+.login-btn:hover {
+  background-color: #2e2e2e;
+}
+
+.bottom-description {
+  margin-right: 20rem;
+  width: calc(100% - 20rem);
+  display: flex;
+  align-items: flex-start;
+}
+
+.bottom-phrase {
+  margin-right: 0.4rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: rgba(0, 0, 0, 0.8000000119);
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.signup-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.left-arrow-btn {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+
+.left-arrow-btn:hover {
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.login .right-side {
+  box-sizing: border-box;
+  padding: 9.6rem 6.4rem;
+  width: 72rem;
+  height: 102.4rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/blue-paint.png');
+  flex-shrink: 0;
+}
+.login .right-side .headline-description {
+  width: 51.4rem;
+  height: 12.7rem;
+}
+
+.headline-phrase1 {
+  margin-bottom: 3.2rem;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #1b0c0c;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+}
+
+.headline-phrase2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+}

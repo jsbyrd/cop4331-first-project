@@ -1,0 +1,270 @@
+
+html {
+	font-size:62.5%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul, li {
+	list-style: none;
+}
+
+input {
+	border: none;
+}
+
+body {
+  width: 100%;
+}
+
+.register {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.register .left-side {
+  box-sizing: border-box;
+  padding: 2.7rem 11.6rem 2.7rem 2.9rem;
+  height: 102.4rem;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.birdie-icon {
+  margin-right: 0.3rem;
+  width: 17.2rem;
+  height: 15.6rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+  background-color: #ccf3fb;
+  border-radius: 50%;
+}
+
+.register-box {
+  margin: 14rem 0rem 23.7rem 0rem;
+  width: 40rem;
+  height: calc(100% - 38.4rem);
+  flex-shrink: 0;
+}
+
+.register-frame {
+  margin-bottom: 3.8rem;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-phrase {
+  margin-bottom: 6.4rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.register-inner-frame {
+  width: 100%;
+  row-gap: 2.4rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.get-started-frame{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.get-started {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.375;
+  letter-spacing: -0.032rem;
+  color: #000000;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#signup .input-user {
+  margin-bottom: 5%;
+  box-sizing: border-box;
+  padding: 1.9rem 2rem;
+  width: 100%;
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1.275;
+  color: rgba(0, 0, 0, 0.764);
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  border: solid 0.2rem rgba(0, 0, 0, 0.400000006);
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+#pass-rqmt {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+#pass-rqmt p {
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -20px;
+  content: "\2713";
+}
+
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -20px;
+  content: "\2715";
+}
+
+.create-btn-frame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.create-btn {
+  margin-bottom: 1.6rem;
+  width: 100%;
+  height: 6rem;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #ffffff;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.create-btn:hover {
+  background-color: #2e2e2e;
+}
+
+.bottom-phrase {
+  margin-right: 19.6rem;
+  width: calc(100% - 19.6rem);
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.bottom-phrase2 {
+  margin-right: 0.4rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: rgba(0, 0, 0, 0.8000000119);
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.login-link {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.275;
+  text-decoration-line: underline;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.left-arrow-btn {
+  width: 4rem;
+  height: 4rem;
+  object-fit: contain;
+  vertical-align: top;
+}
+
+.left-arrow-btn:hover {
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.register .right-side {
+  width: 72rem;
+  height: 102.4rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.right-frame {
+  box-sizing: border-box;
+  padding: 9.6rem 6.4rem;
+  width: 72rem;
+  height: 102.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/light-blue-sky.png');
+}
+
+.right-description {
+  width: 51.4rem;
+  height: 12.7rem;
+}
+
+.right-phrase1 {
+  margin-bottom: 3.2rem;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #1a0b0b;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+}
+
+.right-phrase2 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+}
