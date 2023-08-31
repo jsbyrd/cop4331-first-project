@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
+  <link rel="stylesheet" href="./styles/login.css"/>
+</head>
+<body>
+<div class="login">
+  <div class="login-details">
+    <a href="index.html" class = "ref-icon"><img class="birdie-icon" alt="birdie icon" src="./assets/birdie.png" /></a>
+    <div class="login-box">
+      <div class="login-frame">
+        <p class="login-phrase">Sign in account</p>
+        <div class="login-frame2">
+          <!-- Login Form -->
+          <form id="loginInfo" class="login-input">
+            <input type="text" class="user-input" id="loginName" placeholder="Username" name="username" required
+            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <div class="login-frame3">
+            <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required
+            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}" />
+            </div>
+          </form>
+          <div class="bottom-frame">
+            <button type="button" id="loginButton" class="login-btn" onclick="methodInHere()">Login</button>
+            <div class="bottom-description">
+              <p class="bottom-phrase">Don’t have an account?</p>
+              <a href="register.html" class="signup-link" >Sign up</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="index.html" ><img class="left-arrow-btn" id="backArrow"src="./assets/back-arrow.png"/></a>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="headline-description">
+      <p class="headline-phrase1">Manage your contacts here</p>
+      <p class="headline-phrase2">Organize contacts efficiently</p>
+    </div>
+  </div>
+</div>
+</body>
