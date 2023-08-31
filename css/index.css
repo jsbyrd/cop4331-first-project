@@ -1,0 +1,166 @@
+html {
+	font-size:62.5%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+input {
+	border: none;
+}
+body {
+  width: 100%;
+}
+.home {
+  width: 100%;
+  height: 102.4rem;
+  overflow: hidden;
+  position: relative;
+  background-color: #ffffff;
+}
+.top {
+  box-sizing: border-box;
+  padding: 4.7rem 8.3rem 31.1rem 5.1rem;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  border: solid 0.1rem #000000;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url('../assets/blue-mountain.png');
+}
+.header {
+  margin-bottom: 25.3rem;
+  width: 100%;
+  height: 15.6rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.birdie-icon {
+  width: 17.2rem;
+  height: 15.6rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+  background-color: #ccf3fb;
+  border-radius: 50%;
+}
+.navbar {
+  box-sizing: border-box;
+  padding: 1.7rem 0rem 0.1rem 31.2rem;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+.center-titles {
+  margin: 0.2rem 18.2rem 0rem 0rem;
+  width: 35.4rem;
+  height: 13.6rem;
+  position: relative;
+  flex-shrink: 0;
+}
+.contact-manager {
+  width: 35.4rem;
+  height: 6.3rem;
+  position: absolute;
+  left: 0;
+  top: 7.3rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Lohit Bengali, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.birdie-title {
+  width: 18.5rem;
+  height: 8.9rem;
+  position: absolute;
+  left: 8rem;
+  top: 0;
+  text-align: center;
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1.2575;
+  color: #000000;
+  font-family: Copperplate, 'Source Sans Pro';
+  white-space: nowrap;
+}
+.login-btn {
+  margin-right: 3.3rem;
+  width: 12.3rem;
+  height: 6rem;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #115995;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.login-btn:hover {
+  color: #66bbe3;
+}
+
+.register-btn {
+  width: 13.5rem;
+  height: 6rem;
+  font-size: 2.8rem;
+  font-weight: 400;
+  line-height: 1.0714285714;
+  color: #ffffff;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #115995;
+  border-radius: 1rem;
+  flex-shrink: 0;
+}
+
+.register-btn:hover {
+  color: #66bbe3;
+}
+
+.detail-1 {
+  margin: 0rem 79.3rem 6.8rem 0rem;
+  max-width: 48.7rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.2575;
+  color: #ffffff;
+  font-family: Lohit Bengali, 'Source Sans Pro';
+  flex-shrink: 0;
+}
+.detail-2 {
+  margin-left: 102.4rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.2575;
+  color: #ffffff;
+  font-family: Lohit Bengali, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  flex-shrink: 0;
+}
