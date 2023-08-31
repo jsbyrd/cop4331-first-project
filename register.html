@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>Register</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400"/>
+  <link rel="stylesheet" href="./styles/register.css"/>
+</head>
+<body>
+<div class="register">
+  <div class="left-side">
+    <a href="index.html" class = "ref-icon"><img class="birdie-icon" alt="birdie icon" src="./assets/birdie.png" /></a>
+    <div class="register-box">
+      <div class="register-frame">
+        <p class="register-phrase">Create account</p>
+        <div class="register-inner-frame">
+          <div class="get-started-frame">
+            <p class="get-started">Get started </p>
+          </div>
+          <form id="signup" class="input-form">
+            <input type="text" class="input-user" id="firstName" placeholder="First Name" name="firstname" required
+            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="text" class="input-user" id="lastName" placeholder="Last Name" name="lastname" required
+            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="text" class="input-user" id="username" placeholder="Username" name="username" required
+            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="password" class="input-user" id="password" placeholder="Password" name="password" required
+              pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}" />
+            <div id="pass-rqmt">
+              <h2>Password must contain the following:</h2>
+              <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+              <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+              <p id="number" class="invalid">A <b>number</b></p>
+              <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+          </form>  
+          <script>
+            // For password requirements: 
+            var myInput = document.getElementById("password");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+            
+            // Show the message box when password field clicked
+            myInput.onfocus = function() {
+              document.getElementById("pass-rqmt").style.display = "block";
+            }
+            
+            // Hide message box when password field unclicked
+            myInput.onblur = function() {
+              document.getElementById("pass-rqmt").style.display = "none";
+            }
+            
+            // When user types in input field
+            myInput.onkeyup = function() {
+              // Validate lowercase letters
+              var lowerCaseLetters = /[a-z]/g;
+              if(myInput.value.match(lowerCaseLetters)) {
+                letter.classList.remove("invalid");
+                letter.classList.add("valid");
+              } else {
+                letter.classList.remove("valid");
+                letter.classList.add("invalid");
+            }
+            
+              // Validate capital letters
+              var upperCaseLetters = /[A-Z]/g;
+              if(myInput.value.match(upperCaseLetters)) {
+                capital.classList.remove("invalid");
+                capital.classList.add("valid");
+              } else {
+                capital.classList.remove("valid");
+                capital.classList.add("invalid");
+              }
+            
+              // Validate numbers
+              var numbers = /[0-9]/g;
+              if(myInput.value.match(numbers)) {
+                number.classList.remove("invalid");
+                number.classList.add("valid");
+              } else {
+                number.classList.remove("valid");
+                number.classList.add("invalid");
+              }
+            
+              // Validate length
+              if(myInput.value.length >= 8) {
+                length.classList.remove("invalid");
+                length.classList.add("valid");
+              } else {
+                length.classList.remove("valid");
+                length.classList.add("invalid");
+              }
+            }
+        </script>
+          <div class="create-btn-frame">
+            <button type="button" id="loginButton" class="create-btn" onclick="methodInHere()">Create account</button>
+            <div class="bottom-phrase">
+              <p class="bottom-phrase2">Already have an account?</p>
+              <a href="login.html" class="login-link" >Log in</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="index.html" ><img class="left-arrow-btn" id="backArrow"src="./assets/back-arrow.png"/></a>
+    </div>
+  </div>
+  <div class="right-side">
+    <div class="right-frame">
+      <div class="right-description">
+        <p class="right-phrase1">Manage your contacts here</p>
+        <p class="right-phrase2">Organize contacts efficiently</p>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
