@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script type="text/javascript" src="js/code.js"></script>
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,12 +9,12 @@
   <title>Login</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
-  <link rel="stylesheet" href="./styles/login.css"/>
+  <link rel="stylesheet" href="./css/login.css"/>
 </head>
 <body>
 <div class="login">
   <div class="login-details">
-    <a href="index.html" class = "ref-icon"><img class="birdie-icon" alt="birdie icon" src="./assets/birdie.png" /></a>
+    <a href="index.html" class = "ref-icon"><img class="birdie-icon" alt="birdie icon" src="./images/birdie.png" /></a>
     <div class="login-box">
       <div class="login-frame">
         <p class="login-phrase">Sign in account</p>
@@ -28,15 +29,18 @@
             </div>
           </form>
           <div class="bottom-frame">
-            <button type="button" id="loginButton" class="login-btn" onclick="methodInHere()">Login</button>
+            <button type="button" id="loginButton" class="login-btn" onclick="doLogin()">Login</button>
             <div class="bottom-description">
               <p class="bottom-phrase">Don’t have an account?</p>
               <a href="register.html" class="signup-link" >Sign up</a>
             </div>
           </div>
         </div>
+        <span class="error" id="loginResult"></span>
+        <div class="row">
+        </div>
       </div>
-      <a href="index.html" ><img class="left-arrow-btn" id="backArrow"src="./assets/back-arrow.png"/></a>
+      <a href="index.html" ><img class="left-arrow-btn" id="backArrow"src="./images/back-arrow.png"/></a>
     </div>
   </div>
   <div class="right-side">
