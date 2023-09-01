@@ -50,6 +50,7 @@ body {
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
+  box-shadow: 10px 10px 5px #0f0f0f6d;
   background-color: #ccf3fb;
   border-radius: 50%;
 }
@@ -79,8 +80,8 @@ body {
   font-size: 5rem;
   font-weight: 400;
   line-height: 1.2575;
-  color: #000000;
-  font-family: Lohit Bengali, 'Source Sans Pro';
+  color:  #115995;
+  font-family: Copperplate, 'Source Sans Pro';
   white-space: nowrap;
 }
 .birdie-title {
@@ -93,7 +94,7 @@ body {
   font-size: 7rem;
   font-weight: 700;
   line-height: 1.2575;
-  color: #000000;
+  color: #115995;
   font-family: Copperplate, 'Source Sans Pro';
   white-space: nowrap;
 }
@@ -147,8 +148,8 @@ body {
   font-size: 5rem;
   font-weight: 400;
   line-height: 1.2575;
-  color: #ffffff;
-  font-family: Lohit Bengali, 'Source Sans Pro';
+  color: #ffffffc0;
+  font-family: Copperplate, 'Source Sans Pro';
   flex-shrink: 0;
 }
 .detail-2 {
@@ -157,8 +158,8 @@ body {
   font-size: 5rem;
   font-weight: 400;
   line-height: 1.2575;
-  color: #ffffff;
-  font-family: Lohit Bengali, 'Source Sans Pro';
+  color: #ffffffc0;
+  font-family: Copperplate, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
   align-items: baseline;

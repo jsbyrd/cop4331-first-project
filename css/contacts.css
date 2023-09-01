@@ -105,7 +105,7 @@ body {
   width: calc(100% - 51.8rem);
   height: 6rem;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
 }
 
