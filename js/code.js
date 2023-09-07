@@ -56,7 +56,50 @@ function doLogin()
 	{
 		document.getElementById("loginResult").innerHTML = err.message;
 	}
+}
 
+function doRegister()
+{	
+	let login = document.getElementById("username").value;
+	let password = document.getElementById("password").value;
+  firstName = document.getElementById("firstName").value;
+  lastName = document.getElementById("lastName").value;
+
+	let tmp = {login:login,password:password,firstName,lastName};
+//	var tmp = {login:login,password:hash};
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/Register.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId < 1 )
+				{		
+					// document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+          console.log("Uh.... something went wrong in Register.js");
+					return;
+				}
+	
+				window.location.href = "login.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+    console.log("Uh.... something went wrong in Register.php");
+		// document.getElementById("loginResult").innerHTML = err.message;
+	}
 }
 
 function doAddContact()
