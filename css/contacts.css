@@ -1,200 +1,638 @@
-
 html {
 	font-size:62.5%;
 }
+
 * {
 	margin: 0;
 	padding: 0;
 }
+
 ul, li {
 	list-style: none;
 }
+
 input {
 	border: none;
 }
 
 body {
-  width: 100%;
+  height: 100%;
 }
 
 .contact-list {
   width: 100%;
   height: 102.4rem;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   background-color: #ffffff;
 }
 
 .contact-list .background {
   box-sizing: border-box;
-  padding: 4.7rem 5.1rem 64.8rem 5.1rem;
-  width: 100%;
-  height: 100%;
+  padding: 3.9rem 6.5rem 71.371rem 29.9rem;
+  width: 144rem;
+  height: 102.4rem;
+  position: absolute;
+  left: 0;
+  top: 0;
   align-items: center;
   display: flex;
   flex-direction: column;
   border: solid 0.1rem #000000;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../images/blue-ombre.jpg');
+  background-position:  center;
+  background-image: url('../images/mountains-clipart.svg'), url('../images/blue-gradient.png');
+  background-color: #ffffff;
 }
 
-.top-bar {
-  margin: 0rem 8.9rem 4.1rem 0rem;
+.contact-list .background .top-bar {
+  margin: 0rem 0rem 5.1rem 37.8rem;
+  width: calc(100% - 37.8rem);
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   flex-shrink: 0;
 }
 
+.contact-phrase {
+  margin: 0.3rem 28rem 0rem 0rem;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.275;
+  color: #000000;
+  font-family: Abel, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Dropdown Button code from W3Schools */
+.dropbtn {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2175;
+  color: #eeeeee;
+  font-family: Montserrat, 'Source Sans Pro';
+  white-space: nowrap;
+  display: flex;
+  padding: 0.5rem 12rem 0.5rem 1rem;
+  align-items: center;
+  background-color: #5a9dd6;
+  border-radius: 2rem;
+  flex-shrink: 0;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ccf3fb;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 1rem;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  font-family: Montserrat, 'Source Sans Pro';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+.dropdown-content button {
+  font-family: Montserrat, 'Source Sans Pro';
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: black;
+  padding: 2px 110px 2px 16px;
+  display: block;
+  border-radius: 0rem 0rem 1rem 1rem;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #55a3dc;
+}
+
+.dropdown-content button:hover {
+  background-color: #55a3dc;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #035195;
+}
+
+.arrow-down {
+  margin-left: 8.5rem;
+  margin-top: 0.0643rem;
+  width: 0.9941rem;
+  height: 0.5357rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+}
+
+.center-body {
+  margin: 0rem 27.2rem 3rem 6.3rem;
+  width: calc(100% - 33.5rem);
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Search Form */
+form {
+  margin: 0.2rem 14.5rem 0rem 0rem;
+  background-color: #55a3dc;
+  width: 41.2rem;
+  height: 4.8rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+form ::placeholder {
+  color: #fff;
+  opacity: 0.7; 
+}
+
+input {
+  font-family: Poppins, 'Source Sans Pro';
+  all: unset;
+  font: 16px system-ui;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  padding: 6px 10px;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+svg {
+  color: #fff;
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  padding: 10px;
+}
+
+svg:hover {
+  cursor: pointer;
+}
+
+/* page formatting with other add contact form*/
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.8);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.overlay:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.wrapper {
+	margin: 70px auto;
+	padding: 20px;
+	background: #e7e7e7;
+	border-radius: 5px;
+	width: 30%;
+	transition: all 5s ease-in-out;
+}
+
+.wrapper h2 {
+	margin-top: 0;
+	color: #333;
+}
+
+.wrapper .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: #333;
+}
+
+.wrapper .close:hover {
+	color: #06D85F;
+}
+
+.wrapper .content {
+	max-height: 30%;
+	overflow: auto;
+}
+
+
+/*form for other add form*/
+
+.container {
+	border-radius: 5px;
+	background-color: #e7e7e7;
+	padding: 20px 0;
+  
+}
+
+.add-form label {
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: 3px;
+}
+
+#AddMe input {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 6px;
+	margin-bottom: 16px;
+	resize: vertical;
+}
+
+.add-contact-button {
+	background-color: #413b3b;
+	color: #fff;
+	padding: 15px 50px;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+}
+
+
+/* add contacts table formatting */
+/* code from example */
+#addMe {
+  font-family: 'Montserrat';
+  display: none;
+  border-radius: 17px;
+  position: relative;
+  background: #438ecd;
+  max-width: 350px;
+  margin: 0 auto 50px;
+  padding: 30px 30px 300px 30px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#addMe input::placeholder {
+  color:#438ecd;
+}
+#addMe input {
+  border-radius: 17px;
+  font-family: 'Montserrat';
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color:#438ecd;
+}
+
+#addMe input ::placeholder{
+  color:#438ecd;
+}
+#addMe button {
+  border-radius: 17px;
+  font-family: 'Montserrat';
+  outline: 0;
+  background: #035195;
+  color: white;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+#contacts td input {
+  border-radius: 17px;
+  font-family: 'Montserrat';
+  outline: 0;
+  background: #ccf3fb;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+
+/* table formatting */
+
+#contactsTable {
+  display: block;
+  height: 500px;
+}
+
+table {
+  width:100%;
+  table-layout: fixed;
+  border-radius: 0.7764rem;
+}
+
+.tbl-content {
+  height: 300px;
+  overflow-x: auto;
+  margin-top: 0px;
+  border: 1px solid #1164ab;
+  border-radius: 0.7764rem;
+}
+
+#contacts td,
+#contacts th {
+  border: 1px solid #55a3dc;
+}
+
+#contacts tr:hover {
+  background-color: #478fbb;
+}
+
+#contacts th {
+  padding: 1.165rem 20.172rem 1.165rem 1.941rem;
+  text-align: left;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #438ecd;
+  text-transform: uppercase;
+}
+
+#contacts td {
+  padding: 15px;
+  text-align: left;
+  font-family: 'Montserrat';
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 15px;
+  font-weight: bold;
+  color: #035195;
+  background-color: #ccf3fb;
+}
+
+#contacts td span {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 100%;
+  color: #1164ab;
+}
+
+/* add contact button format */
+.add-frame {
+  margin-bottom: 0.2rem;
+  width: 150px;
+  padding: 0.2rem 2rem 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  background-color: #55a3dc;
+  border-radius: 2rem;
+  flex-shrink: 0;
+ 
+}
+
+.plus-img {
+  margin-right: 1rem;
+  width: 3.4rem;
+  height: 3.4rem;
+  object-fit: contain;
+  border-radius: 2.4rem;
+  flex-shrink: 0;
+}
+
+.add-contact-phrase {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.2125;
+  color: #ffffff;
+  font-family: Inter, 'Source Sans Pro';
+  white-space: nowrap;
+  flex-shrink: 0;
+
+}
+
+.side-bar {
+  width: 26.5187rem;
+  height: 100%;
+  display: block;
+  position: relative;
+  left: 0;
+  top: 0;
+  align-items: flex-end;
+}
+.side-frame {
+  margin-right: 0.0003rem;
+  box-sizing: border-box;
+  padding: 1.7996rem 0.0003rem;
+  width: 26.5184rem;
+  height: 102.4711rem;
+  overflow: auto;
+  /*disables horizontal scroll*/
+  position: fixed;
+  /*scroll bar stays in place when user is scrolling*/
+  background-color: #599dd5;
+  
+}
+.side-frame2 {
+  width: 100%;
+  height: 96.5745rem;
+  display: flex;
+  flex-direction: column;
+  
+}
 .birdie-icon {
-  margin-right: 3.15rem;
-  width: 14.1rem;
-  height: 12.2rem;
+  margin-left: 3.3rem;
+  margin-bottom: 1rem;
+  width: 7.5rem;
+  height: 7.1rem;
   object-fit: contain;
   vertical-align: top;
   flex-shrink: 0;
   background-color: #ccf3fb;
   border-radius: 50%;
+  
 }
-
-.birdie-title {
-  margin: 0rem 21.85rem 4rem 0rem;
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 700;
-  line-height: 1.2575;
-  color: #000000;
-  font-family: Copperplate, 'Source Sans Pro';
-  white-space: nowrap;
+.side-options {
+  margin-bottom: 60rem;
+  width: 100%;
+  position: relative;
   flex-shrink: 0;
 }
-
-.contact-list-title {
-  margin: 0rem 36.7rem 0.3rem 0rem;
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 400;
-  line-height: 1.275;
-  color: #000000;
-  font-family: Abel, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.logout-btn {
-  margin-bottom: 0.3rem;
-  width: 9rem;
-  height: 6rem;
-  font-size: 1.7rem;
-  font-weight: 600;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #75b7ef;
-  border-radius: 1rem;
-  flex-shrink: 0;
-}
-
-.center-area {
-  margin: 0rem 23.9rem 4.6rem 27.9rem;
-  width: calc(100% - 51.8rem);
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.search-field {
-  box-sizing: border-box;
-  padding: 1.9rem 2rem;
-  width: 40rem;
-  height: 63.5px;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.275;
-  color: #000000;
-  font-family: Abel, 'Source Sans Pro';
-  white-space: nowrap;
-  border: solid 0.2rem #000000;
-  border-radius: 1rem 0rem 0rem 1rem;
-  flex-shrink: 0;
-  background-color: #ccf3fb;
-}
-
-form.search-form button {
+.option-rectangle {
+  width: 26.5rem;
+  height: 5.6rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+  object-fit: contain;
   vertical-align: top;
-  margin-right: 10rem;
-  padding: 1.9rem 2rem;
-  width: 7rem;
-  height: 63.5px;
-  color: #000000;
+
+}
+
+.option-frame {
+  width: 10.8515rem;
+  height: 8.3022rem;
+  position: absolute;
+  left: 3.2017rem;
+  top: 1.4078rem;
+}
+.contact-frame {
+  margin-bottom: 3.1022rem;
+  box-sizing: border-box;
+  padding-left: 0.1669rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+ 
+}
+
+.contacts-icon {
+  margin: 0rem 1.017rem 0rem 0rem;
+  width: 1.6678rem;
+  height: 1.6678rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
+  
+}
+.contacts-phrase {
+  font-size: 1.7003rem;
+  font-weight: 600;
+  line-height: 1.4999999439;
+  color: #eef0f4;
+  font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
-  border: solid 0.2rem #000000;
-  border-radius: 0rem 1rem 1rem 0rem;
-  background-color: #ccf3fb;
-  border-left: none; 
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.contacts-phrase:hover {
+  color: black;
   cursor: pointer;
 }
 
-form.search-form button:hover {
-  background: #3085e7;
+.about-frame {
+  margin-right: 0.2508rem;
+  box-sizing: border-box;
+  padding-left: 0.1668rem;
+  width: calc(100% - 0.2508rem);
+  display: flex;
+  align-items: center;
 }
 
-form.example::after {
-  content: "";
-  clear: both;
-  display: table;
-}
+.about-us-icon {
+  margin: 0rem 1.167rem 0rem 0rem;
+  width: 1.6667rem;
+  height: 1.6667rem;
+  object-fit: contain;
+  vertical-align: top;
+  flex-shrink: 0;
 
-.add-btn {
-  width: 15rem;
-  height: 100%;
+}
+.about-us-phrase {
   font-size: 1.7rem;
   font-weight: 600;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
+  line-height: 1.5;
+  color: #eef0f4;
+  font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.about-us-phrase:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.mountain-art {
+  position: bottom;
+}
+
+.logout-frame {
+  margin: 0rem 12rem 0rem 3rem;
+  width: calc(100% - 15.7015rem);
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: #3085e7;
-  border-radius: 1rem;
   flex-shrink: 0;
 }
 
-.table-header {
-  margin: 0 8.9rem;
-  width: calc(100% - 17.8rem);
-  height: 6rem;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.tablecell {
+.logout-icon-box {
+  margin-right: 1.1976rem;
   box-sizing: border-box;
-  padding: 1.7rem 0.6rem 1.3rem 0.6rem;
-  width: 23.2rem;
+  padding: 1.5rem 1.5rem 3.25rem 2rem;
   height: 100%;
-  font-size: 2.4rem;
-  font-weight: 600;
-  line-height: 1.2125;
-  color: #000000;
-  font-family: Inter, 'Source Sans Pro';
+  background-color: #1164ab;
+  border-radius: 2.5504rem;
+  flex-shrink: 0;
+}
+.logout-icon {
+  width: 2rem;
+  height: 2rem;
+  object-fit: contain;
+  vertical-align: center;
+}
+
+.logout-phrase {
+  margin-bottom: 0.0482rem;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
-  background-color: #3085e7;
   flex-shrink: 0;
 }
 
-.tablecell-2 {
-  width: 23.2rem;
-  height: 100%;
-  background-color: #3085e7;
-  flex-shrink: 0;
+.logout-phrase:hover {
+  color: black;
+  cursor: pointer;
 }
+
