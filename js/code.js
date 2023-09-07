@@ -59,6 +59,97 @@ function doLogin()
 
 }
 
+function doAddContact()
+{
+	userId = 0;
+	firstName = "";
+	lastName = "";
+	
+	let contactFirstName = document.getElementById("firstName").value;
+	let contactLastName = document.getElementById("lastName").value;
+	let phoneNumber = document.getElementById("phoneNumber").value;
+	let email = document.getElementById("email").value;
+	
+	// document.getElementById("loginResult").innerHTML = "";
+
+	let tmp = {firstName: contactFirstName,lastName:contactLastName,phone: phoneNumber, email: email};
+
+	let jsonPayload = JSON.stringify( tmp );
+	
+	let url = urlBase + '/createContact.' + extension;
+	console.log(url);
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				let jsonObject = JSON.parse( xhr.responseText );
+				// userId = jsonObject.id;
+		
+				// if( userId < 1 )
+				// {		
+				// 	document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
+				// 	return;
+				// }
+		
+				// firstName = jsonObject.firstName;
+				// lastName = jsonObject.lastName;
+
+				// saveCookie();
+	
+				// window.location.href = "contacts.html";
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("loginResult").innerHTML = err.message;
+	}
+
+}
+
+function doDeleteContact(id)
+{
+	let warning = window.confirm('Are you sure you want to delete this contact?');
+    if(!warning){
+        return;
+		}
+	//turns id into json object
+	let tmp = {id:id};
+	let jsonPayload = JSON.stringify( tmp );
+
+	//access json php
+	let url = urlBase + '/deleteContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+
+				//document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
+				// refresh page
+				// doSearch();
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		//document.getElementById("contactDeleteResult").innerHTML = err.message;
+	}
+}
+
 function saveCookie()
 {
 	let minutes = 20;
