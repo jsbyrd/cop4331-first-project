@@ -7,38 +7,159 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#000000" />
   <title>Contacts</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C600%2C700"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A600"/>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Copperplate%3A700"/>
-  <link rel="stylesheet" href="./css/contacts.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Urbanist%3A500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C600" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A500" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter%3A400" />
+  <link rel="stylesheet" href="./css/contacts.css" />
 </head>
 <body>
-<div class="contact-list">
-  <div class="background">
-    <div class="top-bar">
-      <a href="index.html" class = "ref-icon"><img class="birdie-icon" alt="birdie icon" src="./images/birdie.png" /></a>
-      <p class="birdie-title">Birdie</p>
-      <p class="contact-list-title">Contact List</p>
-      <button class="logout-btn" onclick="doLogout()">Logout</button>
+  <div class="contact-list">
+    <div class="background">
+      <!-- top body -->
+      <div class="top-bar">
+        <p class="contact-phrase">Contacts</p>
+        <div class="dropdown">
+          <button class="dropbtn">Menu  
+            <img class="arrow-down" src="./images/down-arrow.png" />
+          </button>
+          <div class="dropdown-content">
+            <a href="about.html">About Us</a>
+            <button class="logout-option" onclick="doLogout()">Logout</button>
+          </div>
+        </div>
+      </div>
+      <div class="center-body">
+          <!--search bar and magnifier glass img-->
+          <form id="form" role="search">
+            <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
+            <button type="submit">
+              <svg viewBox="0 0 1024 1024">
+              <path class="path1"
+                d="M848.471 928l-263.059-263.059c-48.941 36.706-110.118 55.059-177.412 55.059-171.294
+                 0-312-140.706-312-312s140.706-312 312-312c171.294 0 312 140.706 312 312 0 67.294-24.471
+                  128.471-55.059 177.412l263.059 263.059-79.529 79.529zM189.623 408.078c0 121.364 97.091
+                   218.455 218.455 218.455s218.455-97.091 218.455-218.455c0-121.364-103.159-218.455-218.455-218.455-121.364
+                    0-218.455 97.091-218.455 218.455z">
+              </path>
+            </svg>
+          </button>
+          </form>
+    
+          <!-- add contact button-->
+         
+          <button id="add-btn" class="add-frame" type="button" onclick=myFunction()> 
+            <img class="plus-img" src="./images/plus-sign.png"/>
+
+            <!-- this is for the other contact form
+              <a class="add-contact-phrase" href="#divOne">Add new contact</a>
+            --> 
+            <span class="add-contact-phrase" >Add new contact</span>
+          </button>
+          
+          
+          <script>
+            // opens add contact form
+            const btn = document.getElementById('add-btn');
+
+            btn.addEventListener('click', () => {
+              const form = document.getElementById('addMe');
+
+              if (form.style.display === 'none') {
+                // this SHOWS the form
+                form.style.display = 'block';
+              } else {
+                // this HIDES the form
+                form.style.display = 'none';
+              }
+            });
+           
+          </script>
+
+        <!--add contact form -->
+        <!--- this is the one that I'm working on- still buggy
+        <div class="overlay" id="divOne">
+          <div class="wrapper">
+            <h2>Add Contact Form</h2><a class="close" href="#">&times;</a>
+            <div class="content">
+              <div class="container">
+                <form id="addMe" class="add-form">
+                  <input class="add-input" id="contactTextFirst" placeholder="First Name" type="text" required>
+                  <input class="add-input" id="contactTextLast" placeholder="Last Name" type="text" required>
+                  <input class="add-input" id="contactTextNumber" placeholder="XXX-XXX-XXXX" type="text" required
+                  pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+                  <input type="text" id="contactTextEmail" placeholder="name@email.com"
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+                  <button type="add-contact-button" id="addContactButton" class="buttons font" onclick="addContact();"> Add Contact
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>-->
+
+         <!--add contact form 2(tester) this one works better-->
+        <div class="addContacts">
+          <form id="addMe" >
+            <input type="text" id="contactTextFirst" placeholder="First Name" required>
+            <input type="text" id="contactTextLast" placeholder="Last Name" required>
+            <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
+              pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+            <input type="text" id="contactTextEmail" placeholder="name@email.com"
+              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+            <button type="button" id="addContactButton" class="buttons font" onclick="addContact();"> Add Contact
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- table -->
+      <div class="tables">
+        <div class="tbl-content" id="contactsTable">
+          <table id="contacts" cellspacing="0">
+            <thread>
+              <tr>
+                <th>First&nbspName</th>
+                <th>Last&nbspName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th></th>
+              </tr>
+            </thread>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
     </div>
-    <div class="center-area">
-      <!-- search form (not complete)-->
-      <form class="search-form" action="">
-        <input type="text" name="search" id="search-text" placeholder="Search..." class="search-field">
-        <button type="submit" id="search-btn"><i class="fa fa-search"></i></button>
-      </form>
-      <!-- need form to input new contact info-->
-      <button class="add-btn">Add Contact</button>
-    </div>
-    <!-- temporary placement of table header (not a table yet)-->
-    <div class="table-header">
-      <div class="tablecell">First Name</div>
-      <div class="tablecell">Last Name</div>
-      <div class="tablecell">Email</div>
-      <div class="tablecell">Phone Number</div>
-      <div class="tablecell-2"></div>
+    <!-- side navigation bar-->
+    <div class="side-bar">
+      <div class="side-frame">
+        <div class="side-frame2">
+          <a href="index.html" class="ref-icon"><img class="birdie-icon" alt="birdie icon"
+              src="./images/birdie.png" /></a>
+          <div class="side-options">
+            <img class="option-rectangle" src="./images/side-bar-rectangle.png" />
+            <div class="option-frame">
+              <div class="contact-frame">
+                <img class="contacts-icon" src="./images/contacts-icon.png" />
+                <a  href="contacts.html" class="contacts-phrase">Contacts</a>
+              </div>
+              <div class="about-frame">
+                <img class="about-us-icon" src="./images/about-us-icon.png" />
+                <a  href="about.html"  class="about-us-phrase">About Us</a>
+              </div>
+            </div>
+          </div>
+          <button class="logout-frame" onclick="doLogout()">
+            <div class="logout-icon-box">
+              <img class="logout-icon" src="./images/logout-icon.png" />
+            </div>
+            <p class="logout-phrase">Logout</p>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </body>
