@@ -205,7 +205,7 @@ svg:hover {
 }
 
 /* page formatting with other add contact form*/
-
+/*
 .overlay {
 	position: fixed;
 	top: 0;
@@ -256,10 +256,10 @@ svg:hover {
 	max-height: 30%;
 	overflow: auto;
 }
-
-
+*/
 /*form for other add form*/
 
+/*
 .container {
 	border-radius: 5px;
 	background-color: #e7e7e7;
@@ -295,7 +295,7 @@ svg:hover {
 	text-transform: uppercase;
 	letter-spacing: 3px;
 }
-
+*/
 
 /* add contacts table formatting */
 /* code from example */
