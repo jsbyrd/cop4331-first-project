@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="js/code.js"></script>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <title>About</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400%2C500%2C600"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat%3A500"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600"/>
+  <link rel="stylesheet" href="./css/about.css"/>
+</head>
+<body>
+<div class="about-us-body">
+  <div class="center-frame">
+    <!-- top body -->
+    <div class="top-bar">
+      <p class="about-us-title">About Us</p>
+      <div class="dropdown">
+        <button class="dropbtn">Menu  
+          <img class="arrow-down" src="./images/down-arrow.png" />
+        </button>
+        <div class="dropdown-content">
+          <a href="contacts.html">Contacts</a>
+          <button class="logout-option" onclick="doLogout()">Logout</button>
+        </div>
+      </div>
+    </div>
+    <!-- team images and names-->
+    <div class="top-circle-row">
+      <img class="ellipse-image" src="./images/photo-circle.png"/>
+      <img class="ellipse-image" src="./images/photo-circle.png"/>
+      <img class="ellipse-image" src="./images/photo-circle.png"/>
+    </div>
+    <div class="top-name-row">
+      <p class="team-name">Joshua Byrd</p>
+      <p class="team-name" id="gen-name">Genesis Escobar</p>
+      <p class="team-name">Benjamin Kuftic</p>
+    </div>
+    <div class="bottom-circle-row">
+      <img class="ellipse-image" src="./images/photo-circle.png"/>
+      <img class="ellipse-image" src="./images/photo-circle.png"/>
+    </div>
+    <div class="bottom-name-row">
+      <p class="team-name-2">Tiffany Petrovic</p>
+      <p class="team-name-2">Parker Waller</p>
+    </div>
+  </div>
+
+  <!-- side navigation bar-->
+  <div class="side-bar">
+    <div class="side-frame">
+      <img class="option-rectangle" src="./images/side-bar-rectangle.png"/>
+      <div class="side-options-frame">
+        <a href="index.html" class="ref-icon"><img class="birdie-icon" alt="birdie icon"
+          src="./images/birdie.png" /></a>
+        <div class="side-options-frame2">
+          <div class="contacts-frame">
+            <img class="contacts-icon" src="./images/contacts-icon.png"/>
+            <a  href="contacts.html" class="contacts-phrase">Contacts</a>
+          </div>
+          <div class="about-frame">
+            <img class="about-icon" src="./images/about-us-icon.png"/>
+            <a  href="about.html"  class="about-us-phrase">About Us</a>
+          </div>
+        </div>
+        <button class="logout-group" onclick="doLogout()">
+          <div class="logout-icon-frame">
+            <img class="logout-icon" src="./images/logout-icon.png" />
+          </div>
+          <p class="logout-phrase">Logout</p>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
