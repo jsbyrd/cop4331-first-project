@@ -271,7 +271,71 @@ function addColor()
 	{
 		document.getElementById("colorAddResult").innerHTML = err.message;
 	}
+}
+
+function doSearchContact(event) {
+  event.preventDefault();
+
+  // Remove previously searched contacts
+  let contactsTable = document.getElementById("tbody");
+  let tableRows = contactsTable.getElementsByTagName("tr");
+  let rowCount = contactsTable.rows.length;
+  for (let i = 0; i < rowCount; i++) {
+    contactsTable.deleteRow(0);
+  }
+
+	let search = document.getElementById("query").value;
+	// Get userId from cookie
+	readCookie();
+
+	let tmp = {search:search,userId:userId};
+	let jsonPayload = JSON.stringify( tmp );
+
+	let url = urlBase + '/Search.' + extension;
 	
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function() 
+		{
+			if (this.readyState == 4 && this.status == 200) 
+			{
+				jsonObject = JSON.parse( xhr.responseText );
+				if (jsonObject.results === undefined) return;
+
+        let contactRow;
+        let firstNameCell;
+        let lastNameCell;
+        let emailCell;
+        let phoneCell;
+
+				for( let i=0; i<jsonObject.results.length; i++ )
+				{
+          // Get contact info
+          let contactResultObject = jsonObject.results[i];
+          // Create new table row
+					contactRow = contactsTable.insertRow(-1);
+          // Create new cells
+          firstNameCell = contactRow.insertCell(0);
+          lastNameCell = contactRow.insertCell(1);
+          emailCell = contactRow.insertCell(2);
+          phoneCell = contactRow.insertCell(3);
+          // Insert corresponding text into cells;
+          firstNameCell.innerHTML = contactResultObject.FirstName;
+          lastNameCell.innerHTML = contactResultObject.LastName;
+          emailCell.innerHTML = contactResultObject.Email;
+          phoneCell.innerHTML = contactResultObject.Phone;
+				}
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		document.getElementById("colorSearchResult").innerHTML = err.message;
+	}
 }
 
 function searchColor()
