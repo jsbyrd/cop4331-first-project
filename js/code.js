@@ -112,11 +112,14 @@ function doAddContact()
 	let contactLastName = document.getElementById("contactTextLast").value;
 	let phoneNumber = document.getElementById("contactTextNumber").value;
 	let email = document.getElementById("contactTextEmail").value;
-	email = removeDashesAndConvertToNumber(email);
+	phoneNumber = removeDashesAndConvertToNumber(phoneNumber);
+
+	readCookie();
 	
+	console.log(contactFirstName + " " + contactLastName + " "  + phoneNumber + " " + email + " " + userId);
 	// document.getElementById("loginResult").innerHTML = "";
 
-	let tmp = {firstName: contactFirstName,lastName:contactLastName,phone: phoneNumber, email: email};
+	let tmp = {firstName:contactFirstName,lastName:contactLastName,Phone:phoneNumber,Email:email, userId: userId};
 
 	let jsonPayload = JSON.stringify( tmp );
 	
@@ -133,6 +136,13 @@ function doAddContact()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
+				userId = jsonObject.id;
+		
+				if( userId >= 1 )
+				{		
+					document.getElementById("create").innerHTML = "Contact added";
+					return;
+				}
 				// userId = jsonObject.id;
 		
 				// if( userId < 1 )
