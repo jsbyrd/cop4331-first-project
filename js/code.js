@@ -108,10 +108,11 @@ function doAddContact()
 	firstName = "";
 	lastName = "";
 	
-	let contactFirstName = document.getElementById("firstName").value;
-	let contactLastName = document.getElementById("lastName").value;
-	let phoneNumber = document.getElementById("phoneNumber").value;
-	let email = document.getElementById("email").value;
+	let contactFirstName = document.getElementById("contactTextFirst").value;
+	let contactLastName = document.getElementById("contactTextLast").value;
+	let phoneNumber = document.getElementById("contactTextNumber").value;
+	let email = document.getElementById("contactTextEmail").value;
+	email = removeDashesAndConvertToNumber(email);
 	
 	// document.getElementById("loginResult").innerHTML = "";
 
@@ -119,7 +120,7 @@ function doAddContact()
 
 	let jsonPayload = JSON.stringify( tmp );
 	
-	let url = urlBase + '/createContact.' + extension;
+	let url = urlBase + '/CreateContact.' + extension;
 	console.log(url);
 
 	let xhr = new XMLHttpRequest();
@@ -156,6 +157,16 @@ function doAddContact()
 	}
 
 }
+
+function removeDashesAndConvertToNumber(inputText) {
+	// Remove dashes from the input text
+	const textWithoutDashes = inputText.replace(/-/g, '');
+  
+	// Convert the text to a number
+	const resultNumber = parseFloat(textWithoutDashes);
+  
+	return isNaN(resultNumber) ? null : resultNumber;
+  }
 
 function doDeleteContact(id)
 {
