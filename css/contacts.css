@@ -204,113 +204,38 @@ svg:hover {
   cursor: pointer;
 }
 
-/* page formatting with other add contact form*/
-/*
-.overlay {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: rgba(0, 0, 0, 0.8);
-	transition: opacity 500ms;
-	visibility: hidden;
-	opacity: 0;
-}
-
-.overlay:target {
-	visibility: visible;
-	opacity: 1;
-}
-
-.wrapper {
-	margin: 70px auto;
-	padding: 20px;
-	background: #e7e7e7;
-	border-radius: 5px;
-	width: 30%;
-	transition: all 5s ease-in-out;
-}
-
-.wrapper h2 {
-	margin-top: 0;
-	color: #333;
-}
-
-.wrapper .close {
-	position: absolute;
-	top: 20px;
-	right: 30px;
-	transition: all 200ms;
-	font-size: 30px;
-	font-weight: bold;
-	text-decoration: none;
-	color: #333;
-}
-
-.wrapper .close:hover {
-	color: #06D85F;
-}
-
-.wrapper .content {
-	max-height: 30%;
-	overflow: auto;
-}
-*/
-/*form for other add form*/
-
-/*
-.container {
-	border-radius: 5px;
-	background-color: #e7e7e7;
-	padding: 20px 0;
-  
-}
-
-.add-form label {
-	text-transform: uppercase;
-	font-weight: 500;
-	letter-spacing: 3px;
-}
-
-#AddMe input {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-top: 6px;
-	margin-bottom: 16px;
-	resize: vertical;
-}
-
-.add-contact-button {
-	background-color: #413b3b;
-	color: #fff;
-	padding: 15px 50px;
-	border: none;
-	border-radius: 50px;
-	cursor: pointer;
-	font-size: 15px;
-	text-transform: uppercase;
-	letter-spacing: 3px;
-}
-*/
-
 /* add contacts table formatting */
 /* code from example */
+
 #addMe {
   font-family: 'Montserrat';
   display: none;
   border-radius: 17px;
-  position: relative;
+  position: absolute;
+  top: 25%;
+  left: 45%;
   background: #438ecd;
   max-width: 350px;
-  margin: 0 auto 50px;
-  padding: 30px 30px 300px 30px;
+  padding: 50px 30px 300px 30px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
+
+#addMe .close {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	transition: all 200ms;
+	font-size: 30px;
+	font-weight: bold;
+	text-decoration: none;
+	color: white;
+}
+
+#addMe .close:hover {
+	color: black;
+}
+
 
 #addMe input::placeholder {
   color:#438ecd;
@@ -332,7 +257,7 @@ svg:hover {
 #addMe input ::placeholder{
   color:#438ecd;
 }
-#addMe button {
+#addMe .add-contact-btn2 {
   border-radius: 17px;
   font-family: 'Montserrat';
   outline: 0;
@@ -369,7 +294,7 @@ svg:hover {
 }
 
 table {
-  width:100%;
+  width: 100%;
   table-layout: fixed;
   border-radius: 0.7764rem;
 }
@@ -378,12 +303,10 @@ table {
   height: 300px;
   overflow-x: auto;
   margin-top: 0px;
-  border: 1px solid #1164ab;
   border-radius: 0.7764rem;
 }
 
-#contacts td,
-#contacts th {
+#contacts td, #header1, #header2, #header3 {
   border: 1px solid #55a3dc;
 }
 
@@ -392,7 +315,7 @@ table {
 }
 
 #contacts th {
-  padding: 1.165rem 20.172rem 1.165rem 1.941rem;
+  padding: 1.165rem 1rem 1.165rem 1rem;
   text-align: left;
   font-family: 'Montserrat';
   font-weight: 500;
@@ -403,8 +326,24 @@ table {
   text-transform: uppercase;
 }
 
+#header1 {
+  width: 180px;
+}
+
+#header2 {
+  width: 240px;
+}
+
+#header3 {
+  width: 90px;
+}
+
+#edit, #delete {
+  width: 40px;
+}
+
 #contacts td {
-  padding: 15px;
+  padding: 10px;
   text-align: left;
   font-family: 'Montserrat';
   vertical-align: middle;
@@ -421,6 +360,13 @@ table {
   overflow: hidden;
   font-size: 100%;
   color: #1164ab;
+}
+
+/*styling for image icons*/
+.edit-icon, .delete-icon {
+  width: 20px;
+  height: 20px;
+  align-self: center;
 }
 
 /* add contact button format */

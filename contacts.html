@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="center-body">
-          <!--search bar and magnifier glass img-->
+          <!-- search bar and magnifier glass img -->
           <form id="form" role="search">
             <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
             <button type="submit" onclick="doSearchContact(event)">
@@ -48,93 +48,78 @@
           </button>
           </form>
     
-          <!-- add contact button-->
-         
-          <button id="add-btn" class="add-frame" type="button"> 
+          <!-- add contact button -->
+          <button id="add-btn" class="add-frame" type="button" onclick="addContactForm()"> 
             <img class="plus-img" src="./images/plus-sign.png"/>
-
-            <!-- this is for the other contact form
-              <a class="add-contact-phrase" href="#divOne">Add new contact</a>
-            --> 
             <span class="add-contact-phrase" >Add new contact</span>
           </button>
           
           
           <script>
             // opens add contact form
-            const btn = document.getElementById('add-btn');
+            function addContactForm() {
 
-            btn.addEventListener('click', () => {
               const form = document.getElementById('addMe');
 
-              if (form.style.display === 'none') {
-                // this SHOWS the form
-                form.style.display = 'block';
+              if (form.style.display == 'block') {
+                  // this HIDES the form
+                  form.style.display = 'none';
               } else {
-                // this HIDES the form
-                form.style.display = 'none';
+                 // this SHOWS the form
+                  form.style.display = 'block';
               }
-            });
+             
+            }
            
           </script>
 
-        <!--add contact form -->
-        <!--- this is the one that I'm working on- still buggy
-        <div class="overlay" id="divOne">
-          <div class="wrapper">
-            <h2>Add Contact Form</h2><a class="close" href="#">&times;</a>
-            <div class="content">
-              <div class="container">
-                <form id="addMe" class="add-form">
-                  <input class="add-input" id="contactTextFirst" placeholder="First Name" type="text" required>
-                  <input class="add-input" id="contactTextLast" placeholder="Last Name" type="text" required>
-                  <input class="add-input" id="contactTextNumber" placeholder="XXX-XXX-XXXX" type="text" required
-                  pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
-                  <input type="text" id="contactTextEmail" placeholder="name@email.com"
-                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-                  <button type="add-contact-button" id="addContactButton" class="buttons font" onclick="addContact();"> Add Contact
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>-->
-
-         <!--add contact form 2(tester) this one works better-->
-        <div class="addContacts">
+         <!-- add contact form -->
+         <div class="addContacts">
           <form id="addMe" >
+            <button class="close" onclick="closeForm()">&times;</button>
             <input type="text" id="contactTextFirst" placeholder="First Name" required>
             <input type="text" id="contactTextLast" placeholder="Last Name" required>
             <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
               pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
             <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-            <button type="button" id="addContactButton" class="buttons font" onclick="doAddContact();"> Add Contact
+            <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
             </button>
           </form>
           <span class="error" id="createResult"></span>
         </div>
       </div>
 
+      <script>
+        // opens add contact form
+        function closeForm() {
+          const form = document.getElementById('addMe');
+          form.style.display = 'none';
+          
+        }
+      </script>
+
       <!-- table -->
-      <div class="tables">
+      <div class="table">
         <div class="tbl-content" id="contactsTable">
           <table id="contacts" cellspacing="0">
             <thread>
               <tr>
-                <th>First&nbspName</th>
-                <th>Last&nbspName</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th></th>
+                <th id="header1">First&nbspName</th>
+                <th id="header1">Last&nbspName</th>
+                <th id="header2">Email</th>
+                <th id="header3">Phone</th>
+                <th id="edit"> </th>
+                <th id="delete"> </th>
               </tr>
+
             </thread>
             <tbody id="tbody"></tbody>
           </table>
         </div>
       </div>
     </div>
-    <!-- side navigation bar-->
+    <!-- side navigation bar -->
     <div class="side-bar">
       <div class="side-frame">
         <div class="side-frame2">
