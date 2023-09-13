@@ -588,6 +588,40 @@ table {
   font-size: 1.7rem;
   font-weight: 400;
   line-height: 1.275;
-	color: #D8000C;
+	color: #ffffff;
 }
+
+.updateButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+	color: #292020;
+  background-color: #f6c832;
+  box-shadow: #035195;
+}
+
+.updateButton img {
+  height: 25px;
+}
+
+.deleteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  height: 50px;
+  width: 50px;
+	color: #292020;
+  background-color: #76746d;
+  box-shadow: #035195;
+}
+
+.deleteButton img {
+  height: 25px;
+}
+
+
 
