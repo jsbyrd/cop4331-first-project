@@ -196,9 +196,9 @@ function doDeleteContact(id)
 			{
 
 				console.log("Contact has been deleted");
-				//document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
+				
 				// refresh page
-				// doSearch();
+				doSearchContact(null);
 			}
 		};
 		xhr.send(jsonPayload);
@@ -257,7 +257,10 @@ function addColor()
 }
 
 function doSearchContact(event) {
+
+if (event != null) {
   event.preventDefault();
+}
 
   // Remove previously searched contacts
   let contactsTable = document.getElementById("tbody");
