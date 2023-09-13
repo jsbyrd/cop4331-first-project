@@ -138,25 +138,15 @@ function doAddContact()
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
 		
-				if( userId >= 1 )
+				if( userId > 0 )
 				{		
-					document.getElementById("create").innerHTML = "Contact added";
+					document.getElementById("createResult").innerHTML = "Contact added";
+				}
+				if (userId < 1)
+				{
+					document.getElementById("createResult").innerHTML = "unable to add contact";
 					return;
 				}
-				// userId = jsonObject.id;
-		
-				// if( userId < 1 )
-				// {		
-				// 	document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-				// 	return;
-				// }
-		
-				// firstName = jsonObject.firstName;
-				// lastName = jsonObject.lastName;
-
-				// saveCookie();
-	
-				// window.location.href = "contacts.html";
 			}
 		};
 		xhr.send(jsonPayload);
