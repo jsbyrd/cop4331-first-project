@@ -137,12 +137,14 @@ function doAddContact()
 			{
 				let jsonObject = JSON.parse( xhr.responseText );
 				userId = jsonObject.id;
+
+				console.log(userId);
 		
-				if( userId > 0 )
+				if( userId >= 0 )
 				{		
-					document.getElementById("createResult").innerHTML = "Contact added";
+					document.getElementById("createResult").innerHTML = "Contact succesfully added!";
 				}
-				if (userId < 1)
+				if (userId < 0)
 				{
 					document.getElementById("createResult").innerHTML = "unable to add contact";
 					return;
@@ -170,6 +172,8 @@ function removeDashesAndConvertToNumber(inputText) {
 
 function doDeleteContact(id)
 {
+	console.log("delete" + id);
+
 	let warning = window.confirm('Are you sure you want to delete this contact?');
     if(!warning){
         return;
@@ -179,7 +183,7 @@ function doDeleteContact(id)
 	let jsonPayload = JSON.stringify( tmp );
 
 	//access json php
-	let url = urlBase + '/deleteContact.' + extension;
+	let url = urlBase + '/DeleteContact.' + extension;
 
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", url, true);
@@ -191,6 +195,7 @@ function doDeleteContact(id)
 			if (this.readyState == 4 && this.status == 200)
 			{
 
+				console.log("Contact has been deleted");
 				//document.getElementById("contactDeleteResult").innerHTML = "Contact has been deleted";
 				// refresh page
 				// doSearch();
@@ -287,6 +292,9 @@ function doSearchContact(event) {
         let lastNameCell;
         let emailCell;
         let phoneCell;
+		let updateCell;
+        let deleteCell;
+		let id;
 
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
@@ -299,11 +307,47 @@ function doSearchContact(event) {
           lastNameCell = contactRow.insertCell(1);
           emailCell = contactRow.insertCell(2);
           phoneCell = contactRow.insertCell(3);
+		  updateCell = contactRow.insertCell(4);
+		  deleteCell = contactRow.insertCell(5);
           // Insert corresponding text into cells;
           firstNameCell.innerHTML = contactResultObject.FirstName;
           lastNameCell.innerHTML = contactResultObject.LastName;
           emailCell.innerHTML = contactResultObject.Email;
           phoneCell.innerHTML = contactResultObject.Phone;
+		  id = contactResultObject.ID;
+		  console.log(id);
+		  
+		  var editImage = document.createElement('img');
+		  editImage.src = 'images/edit.png'; // Set the image source
+		  editImage.alt = 'Image Alt Text'; 
+
+		  let updateButton = document.createElement('button');
+		  updateButton.setAttribute('type','button');
+		  updateButton.appendChild(editImage);
+		  updateButton.classList.add('updateButton');
+		  updateCell.appendChild(updateButton);
+
+		  var trashImage = document.createElement('img');
+		  trashImage.src = 'images/trash.png'; // Set the image source
+		  trashImage.alt = 'Image Alt Text'; 
+
+		  let deleteButton = document.createElement('button');
+		  deleteButton.setAttribute('type','button');
+		  deleteButton.setAttribute('data-hidden-value', id);
+		  deleteButton.appendChild(trashImage);
+		  deleteButton.classList.add('deleteButton');
+
+		  deleteButton.addEventListener('click', function(event) {
+			// Prevent the click event from propagating to other elements (e.g., the search button)
+			event.stopPropagation();
+
+			const id = deleteButton.getAttribute('data-hidden-value');
+			console.log("button value" + id);
+			doDeleteContact(id);
+		
+		});
+
+		  deleteCell.appendChild(deleteButton);
 				}
 			}
 		};
