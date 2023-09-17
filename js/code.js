@@ -349,7 +349,7 @@ if (event != null) {
 		  updateButton.setAttribute('type','button');
 		  updateButton.appendChild(editImage);
 		  updateButton.classList.add('updateButton');
-			updateButton.setAttribute('value', id);
+		  updateButton.setAttribute('data-hidden-value', id);
 			updateButton.addEventListener('click', (event) => {
 				event.preventDefault();
 				event.stopPropagation();
@@ -357,7 +357,8 @@ if (event != null) {
 				const form = document.getElementById('updateMe');
 				form.style.display = "block";
 				// Pass the id of the contact in the "open update contact form" button to the "actually update contact" button
-				const contactId = event.target.getAttribute('value');
+				const contactId = updateButton.getAttribute('data-hidden-value');
+				console.log("button value " + contactId);
 				const contactUpdateButton = document.getElementById('updateContactButton');
 				contactUpdateButton.setAttribute('value', contactId);
 			});
@@ -403,6 +404,7 @@ function doUpdateContact() {
   let firstName = document.getElementById('updateTextFirst').value;
   let lastName = document.getElementById('updateTextLast').value;
   let phoneNumber = document.getElementById('updateTextNumber').value;
+  phoneNumber = removeDashesAndConvertToNumber(phoneNumber)
   let email = document.getElementById('updateTextEmail').value;
 
 	//turns id into json object
