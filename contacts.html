@@ -88,6 +88,21 @@
             <span class="error" id="createResult"></span>
           </form>
         </div>
+        <!-- update contact form -->
+        <div class="updateContacts">
+          <form id="updateMe" >
+            <button class="close" onclick="closeUpdateContact(event)">&times;</button>
+            <input type="text" id="updateTextFirst" placeholder="First Name" required>
+            <input type="text" id="updateTextLast" placeholder="Last Name" required>
+            <input type="text" id="updateTextNumber" placeholder="XXX-XXX-XXXX" required
+              pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+            <input type="text" id="updateTextEmail" placeholder="name@email.com"
+              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+            <button type="button" id="updateContactButton" class="add-contact-btn2" onclick="doUpdateContact();"> Update Contact
+            </button>
+            <span class="error" id="createResult"></span>
+          </form>
+        </div>
       </div>
 
       <script>

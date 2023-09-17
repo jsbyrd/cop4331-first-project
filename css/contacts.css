@@ -207,7 +207,8 @@ svg:hover {
 /* add contacts table formatting */
 /* code from example */
 
-#addMe {
+#addMe,
+#updateMe {
   font-family: 'Montserrat';
   display: none;
   border-radius: 17px;
@@ -221,7 +222,8 @@ svg:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
 
-#addMe .close {
+#addMe .close,
+#updateMe .close {
 	position: absolute;
 	top: 5px;
 	right: 10px;
@@ -232,15 +234,18 @@ svg:hover {
 	color: white;
 }
 
-#addMe .close:hover {
+#addMe .close:hover,
+#updateMe .close:hover {
 	color: black;
 }
 
 
-#addMe input::placeholder {
+#addMe input::placeholder,
+#updateMe input::placeholder {
   color:#438ecd;
 }
-#addMe input {
+#addMe input,
+#updateMe input {
   border-radius: 17px;
   font-family: 'Montserrat';
   outline: 0;
@@ -254,10 +259,12 @@ svg:hover {
   color:#438ecd;
 }
 
-#addMe input ::placeholder{
+#addMe input ::placeholder,
+#updateMe input::placeholder {
   color:#438ecd;
 }
-#addMe .add-contact-btn2 {
+#addMe .add-contact-btn2,
+#updateMe .add-contact-btn2 {
   border-radius: 17px;
   font-family: 'Montserrat';
   outline: 0;
@@ -582,7 +589,8 @@ table {
   cursor: pointer;
 }
 
-.addContacts span {
+.addContacts span,
+.updateContacts span {
   margin-right: 0.4rem;
   margin-bottom: 1rem;
   font-size: 1.7rem;

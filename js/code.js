@@ -4,6 +4,7 @@ const extension = 'php';
 let userId = 0;
 let firstName = "";
 let lastName = "";
+let contactId = -1;
 
 function doLogin()
 {
@@ -256,6 +257,26 @@ function addColor()
 	}
 }
 
+function closeUpdateContact(event) {
+	if (event != null) {
+		event.preventDefault();
+	}
+	const updateFirstName = document.getElementById('updateTextFirst');
+  const updateLastName = document.getElementById('updateTextLast');
+  const updatePhone = document.getElementById('updateTextNumber');
+  const updateEmail = document.getElementById('updateTextEmail');
+
+	updateFirstName.value = "";
+	updateLastName.value = "";
+	updatePhone.value = "";
+	updateEmail.value = "";
+  const form = document.getElementById('updateMe');
+  form.style.display = 'none';
+	const contactUpdateButton = document.getElementById('updateContactButton');
+	contactUpdateButton.setAttribute('value', -1);
+	
+}
+
 function doSearchContact(event) {
 
 if (event != null) {
@@ -295,9 +316,9 @@ if (event != null) {
         let lastNameCell;
         let emailCell;
         let phoneCell;
-		let updateCell;
+				let updateCell;
         let deleteCell;
-		let id;
+				let id;
 
 				for( let i=0; i<jsonObject.results.length; i++ )
 				{
@@ -328,6 +349,19 @@ if (event != null) {
 		  updateButton.setAttribute('type','button');
 		  updateButton.appendChild(editImage);
 		  updateButton.classList.add('updateButton');
+			updateButton.setAttribute('value', id);
+			updateButton.addEventListener('click', (event) => {
+				event.preventDefault();
+				event.stopPropagation();
+
+				const form = document.getElementById('updateMe');
+				form.style.display = "block";
+				// Pass the id of the contact in the "open update contact form" button to the "actually update contact" button
+				const contactId = event.target.getAttribute('value');
+				const contactUpdateButton = document.getElementById('updateContactButton');
+				contactUpdateButton.setAttribute('value', contactId);
+			});
+
 		  updateCell.appendChild(updateButton);
 
 		  var trashImage = document.createElement('img');
@@ -341,17 +375,17 @@ if (event != null) {
 		  deleteButton.classList.add('deleteButton');
 
 		  deleteButton.addEventListener('click', function(event) {
-			// Prevent the click event from propagating to other elements (e.g., the search button)
-			event.stopPropagation();
+				// Prevent the click event from propagating to other elements (e.g., the search button)
+				event.stopPropagation();
 
-			const id = deleteButton.getAttribute('data-hidden-value');
-			console.log("button value" + id);
-			doDeleteContact(id);
+				const id = deleteButton.getAttribute('data-hidden-value');
+				console.log("button value" + id);
+				doDeleteContact(id);
 		
-		});
+			});
 
 		  deleteCell.appendChild(deleteButton);
-				}
+			}
 			}
 		};
 		xhr.send(jsonPayload);
@@ -359,6 +393,47 @@ if (event != null) {
 	catch(err)
 	{
 		document.getElementById("colorSearchResult").innerHTML = err.message;
+	}
+}
+
+function doUpdateContact() {
+	let contactId = document.getElementById('updateContactButton').getAttribute('value');
+	console.log(contactId);
+
+  let firstName = document.getElementById('updateTextFirst').value;
+  let lastName = document.getElementById('updateTextLast').value;
+  let phoneNumber = document.getElementById('updateTextNumber').value;
+  let email = document.getElementById('updateTextEmail').value;
+
+	//turns id into json object
+	let tmp = {id:contactId, firstName:firstName, lastName:lastName, Phone:phoneNumber, Email:email};
+	let jsonPayload = JSON.stringify( tmp );
+
+	//access json php
+	let url = urlBase + '/EditContact.' + extension;
+
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", url, true);
+	xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+	try
+	{
+		xhr.onreadystatechange = function()
+		{
+			if (this.readyState == 4 && this.status == 200)
+			{
+
+				console.log("Contact has been updated");
+				closeUpdateContact(null);
+				
+				// refresh page
+				doSearchContact(null);
+			}
+		};
+		xhr.send(jsonPayload);
+	}
+	catch(err)
+	{
+		//document.getElementById("contactDeleteResult").innerHTML = err.message;
 	}
 }
 
