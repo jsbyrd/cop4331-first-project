@@ -73,7 +73,7 @@
 
          <!-- add contact form -->
          <div class="addContacts">
-          <form id="addMe" >
+          <form id="addMe" onsubmit="doAddContact()">
             <button class="close" onclick="closeForm()">&times;</button>
             <div class="contact-form-headings">First Name</div>
             <input type="text" id="contactTextFirst" placeholder="First Name" required>
@@ -85,7 +85,7 @@
             <div class="contact-form-headings">Email</div>
             <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-            <input type="submit" id="addContactButton" class="add-contact-btn2" value="Add Contact" onsubmit="doAddContact();">
+            <input type="submit" id="addContactButton" class="add-contact-btn2" value="Add Contact">
             <span class="error" id="createResult"></span>
           </form>
         </div>
