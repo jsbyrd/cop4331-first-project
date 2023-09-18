@@ -27,7 +27,7 @@ body {
 .login-details {
   margin-left: 5%; 
   margin-top: 2%;
-  height: 100%;
+  height: 102.4rem;
   flex-shrink: 0;
 }
 
@@ -151,11 +151,11 @@ body {
   justify-content: center;
   background-color: #115995;
   border-radius: 1rem;
-  
+  border:none;
 }
 
 .login-btn:hover {
-  background-color: #2e2e2e;
+  background-color: #0a3659;
 }
 
 .bottom-description {
@@ -189,7 +189,6 @@ body {
 }
 
 .left-arrow-btn {
-  margin-bottom: 50%;
   width: 4rem;
   height: 4rem;
 }

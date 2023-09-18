@@ -176,6 +176,7 @@ body {
   background-color: #115995;
   border-radius: 1rem;
   flex-shrink: 0;
+  border: none;
 }
 
 .create-btn:hover {

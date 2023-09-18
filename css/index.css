@@ -26,10 +26,9 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  background-size: 100% 100%;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../images/blue-mountain.png');
+  background-image: url('../images/blue-mountain.svg');
 }
 .header {
   margin-bottom: 25.3rem;
