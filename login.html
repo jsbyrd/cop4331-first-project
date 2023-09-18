@@ -29,10 +29,10 @@
             <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required
             pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}" />
             </div>
+            <button type="submit" id="loginButton" class="login-btn" onsubmit="doLogin()">Login</button>
           </form>
           <span class="error" id="loginResult"></span>
           <div class="bottom-frame">
-            <button type="button" id="loginButton" class="login-btn" onclick="doLogin()">Login</button>
             <div class="bottom-description">
               <p class="bottom-phrase">Don’t have an account?</p>
               <a href="register.html" class="signup-link" >Sign up</a>

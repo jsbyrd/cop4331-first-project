@@ -244,6 +244,7 @@ svg:hover {
 #updateMe input::placeholder {
   color:#438ecd;
 }
+
 #addMe input,
 #updateMe input {
   border-radius: 17px;
@@ -259,11 +260,11 @@ svg:hover {
   color:#438ecd;
 }
 
-#addMe input:valid {
+#addMe input[type=text]:valid {
   border: 2px solid black;
 }
 
-#addMe input:invalid {
+#addMe input[type=text]:invalid {
   border: 2px solid red;
 }
 

@@ -85,11 +85,11 @@
             <div class="contact-form-headings">Email</div>
             <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-            <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
-            </button>
+            <input type="submit" id="addContactButton" class="add-contact-btn2" value="Add Contact" onsubmit="doAddContact();">
             <span class="error" id="createResult"></span>
           </form>
         </div>
+
         <!-- update contact form -->
         <div class="updateContacts">
           <form id="updateMe" >
@@ -108,7 +108,7 @@
       </div>
 
       <script>
-        // opens add contact form
+        // closes add contact form
         function closeForm() {
           const form = document.getElementById('addMe');
           form.style.display = 'none';
