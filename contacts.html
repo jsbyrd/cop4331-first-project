@@ -68,19 +68,21 @@
                  // this SHOWS the form
                   form.style.display = 'block';
               }
-             
             }
-           
           </script>
 
          <!-- add contact form -->
          <div class="addContacts">
           <form id="addMe" >
             <button class="close" onclick="closeForm()">&times;</button>
+            <div class="contact-form-headings">First Name</div>
             <input type="text" id="contactTextFirst" placeholder="First Name" required>
+            <div class="contact-form-headings">Last Name</div>
             <input type="text" id="contactTextLast" placeholder="Last Name" required>
+            <div class="contact-form-headings">Phone Number</div>
             <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
               pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+            <div class="contact-form-headings">Email</div>
             <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
             <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
@@ -124,8 +126,8 @@
                 <th id="header1">Last&nbspName</th>
                 <th id="header2">Email</th>
                 <th id="header3">Phone</th>
-                <th id="edit"> </th>
-                <th id="delete"> </th>
+                <th id="edit">Edit</th>
+                <th id="delete">Delete</th>
               </tr>
 
             </thread>
@@ -148,7 +150,7 @@
                 <a  href="contacts.html" class="contacts-phrase">Contacts</a>
               </div>
               <div class="about-frame">
-                <img class="about-us-icon" src="./images/about-us-icon.png" />
+                <img class="about-us-icon" src="./images/people.png" />
                 <a  href="about.html"  class="about-us-phrase">About Us</a>
               </div>
             </div>
