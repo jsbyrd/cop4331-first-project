@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script type="text/javascript" src="js/register.js"></script>
+  <script type="text/javascript" src="js/code.js"></script>
   <meta charset="utf-8" />
   <link rel="icon" href="/favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,19 +23,16 @@
           <div class="get-started-frame">
             <p class="get-started">Get started </p>
           </div>
-          <form id="signup" class="input-form">
+          <form id="signup" class="input-form" onsubmit="doRegister()">
             <div class="input-titles">First Name</div>
-            <input type="text" class="input-user" id="firstName" placeholder="First Name" name="firstname" required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="text" class="input-user" id="firstName" placeholder="First Name" name="firstname" required/>
             <div class="input-titles">Last Name</div>
-            <input type="text" class="input-user" id="lastName" placeholder="Last Name" name="lastname" required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="text" class="input-user" id="lastName" placeholder="Last Name" name="lastname" required/>
             <div class="input-titles">Username</div>
-            <input type="text" class="input-user" id="username" placeholder="Username" name="username" required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <input type="text" class="input-user" id="username" placeholder="Username" name="username" required/>
             <div class="input-titles">Password</div>
             <input type="password" class="input-user" id="password" placeholder="Password" name="password" required
-              pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}" />
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
             <div id="pass-rqmt">
               <h2>Password must contain the following:</h2>
               <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
@@ -43,6 +40,7 @@
               <p id="number" class="invalid">A <b>number</b></p>
               <p id="length" class="invalid">Minimum <b>8 characters</b></p>
             </div>
+            <input type="submit" id="loginButton" class="create-btn" value="Create account">
           </form>  
           <script>
             // For password requirements: 
@@ -105,7 +103,6 @@
             }
         </script>
           <div class="create-btn-frame">
-            <button type="button" id="loginButton" class="create-btn" onclick="doRegister()">Create account</button>
             <div class="bottom-phrase">
               <p class="bottom-phrase2">Already have an account?</p>
               <a href="login.html" class="login-link" >Log in</a>
