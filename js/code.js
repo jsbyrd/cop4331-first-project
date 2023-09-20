@@ -15,7 +15,11 @@ function doLogin()
 	let login = document.getElementById("loginName").value;
 	let password = document.getElementById("loginPassword").value;
 //	var hash = md5( password );
-	
+	if(login == '' || password == '') {
+		document.getElementById("loginResult").innerHTML = "Invalid Input";
+		return;
+	}
+
 	document.getElementById("loginResult").innerHTML = "";
 
 	let tmp = {login:login,password:password};
@@ -67,6 +71,11 @@ function doRegister()
 	let password = document.getElementById("password").value;
 	firstName = document.getElementById("firstName").value;
 	lastName = document.getElementById("lastName").value;
+
+	if(!checkInput(login, password, firstName, lastName)) {
+		document.getElementById("loginResult").innerHTML = "Invalid Input";
+        return;
+	}
 
 	let tmp = {login:login,password:password,firstName,lastName};
 //	var tmp = {login:login,password:hash};
@@ -513,4 +522,25 @@ function readCookie()
 	{
 		window.location.href = "index.html";
 	}
+
+}
+
+function checkInput(username, password, fName, lName) {
+	
+	var inputCheck = false;
+	if(fName == ''|| lName == '' || username == ' '|| password == ' '){
+		return inputCheck;
+	}
+
+	var regex = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}/;
+	
+	var passCheck = false;
+
+	if (regex.test(password) == true) {
+		console.log('VALID PASS');
+		passCheck = true;
+	}
+
+	return passCheck;
+
 }
