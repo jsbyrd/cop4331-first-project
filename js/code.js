@@ -61,10 +61,12 @@ function doLogin()
 
 function doRegister()
 {	
+	document.getElementById("loginResult").innerHTML = "";
+
 	let login = document.getElementById("username").value;
 	let password = document.getElementById("password").value;
-  firstName = document.getElementById("firstName").value;
-  lastName = document.getElementById("lastName").value;
+	firstName = document.getElementById("firstName").value;
+	lastName = document.getElementById("lastName").value;
 
 	let tmp = {login:login,password:password,firstName,lastName};
 //	var tmp = {login:login,password:hash};
@@ -87,7 +89,8 @@ function doRegister()
 				if( userId < 1 )
 				{		
 					// document.getElementById("loginResult").innerHTML = "User/Password combination incorrect";
-          console.log("Uh.... something went wrong in Register.js");
+					console.log("Uh.... something went wrong in Register.js");
+					document.getElementById("loginResult").innerHTML = "Unable to register user";
 					return;
 				}
 	
