@@ -23,7 +23,7 @@
           <div class="get-started-frame">
             <p class="get-started">Get started </p>
           </div>
-          <form id="signup" class="input-form" onsubmit="doRegister()">
+          <form id="signup" class="input-form">
             <div class="input-titles">First Name</div>
             <input type="text" class="input-user" id="firstName" placeholder="First Name" name="firstname" required/>
             <div class="input-titles">Last Name</div>
@@ -40,7 +40,6 @@
               <p id="number" class="invalid">A <b>number</b></p>
               <p id="length" class="invalid">Minimum <b>8 characters</b></p>
             </div>
-            <input type="submit" id="loginButton" class="create-btn" value="Create account">
           </form>  
           <script>
             // For password requirements: 
@@ -53,11 +52,6 @@
             // Show the message box when password field clicked
             myInput.onfocus = function() {
               document.getElementById("pass-rqmt").style.display = "block";
-            }
-            
-            // Hide message box when password field unclicked
-            myInput.onblur = function() {
-              document.getElementById("pass-rqmt").style.display = "none";
             }
             
             // When user types in input field
@@ -103,6 +97,7 @@
             }
         </script>
           <div class="create-btn-frame">
+            <button type="button" id="loginButton" class="create-btn" onclick="doRegister()">Create account</button>
             <div class="bottom-phrase">
               <p class="bottom-phrase2">Already have an account?</p>
               <a href="login.html" class="login-link" >Log in</a>

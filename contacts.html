@@ -22,7 +22,7 @@
       <div class="top-bar">
         <p class="contact-phrase">Contacts</p>
         <div class="dropdown">
-          <button class="dropbtn">Menu  
+          <button class="dropbtn">Menu
             <img class="arrow-down" src="./images/down-arrow.png" />
           </button>
           <div class="dropdown-content">
@@ -73,7 +73,7 @@
 
          <!-- add contact form -->
          <div class="addContacts">
-          <form id="addMe" onsubmit="doAddContact()">
+          <form id="addMe">
             <button class="close" onclick="closeForm()">&times;</button>
             <div class="contact-form-headings">First Name</div>
             <input type="text" id="contactTextFirst" placeholder="First Name" required>
@@ -85,7 +85,8 @@
             <div class="contact-form-headings">Email</div>
             <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-            <input type="submit" id="addContactButton" class="add-contact-btn2" value="Add Contact">
+              <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
+              </button>
             <span class="error" id="createResult"></span>
           </form>
         </div>
@@ -112,7 +113,6 @@
         function closeForm() {
           const form = document.getElementById('addMe');
           form.style.display = 'none';
-          
         }
       </script>
 
