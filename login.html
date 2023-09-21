@@ -21,11 +21,11 @@
         <div class="login-frame2">
           <!-- Login Form -->
           <form id="loginInfo" class="login-input">
-            <input type="text" class="user-input" id="loginName" placeholder="Username" name="username" required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}"/>
+            <div class="input-titles">Username</div>
+            <input type="text" class="user-input" id="loginName" placeholder="Username" name="username" required/>
             <div class="login-frame3">
-            <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required
-            pattern="(?=.*\d)(?=.*[A-Za-z])(?=.*[!@#$%^&*]).{8,32}" />
+            <div class="input-titles">Password</div>
+            <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required/>
             </div>
           </form>
           <span class="error" id="loginResult"></span>

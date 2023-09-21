@@ -21,18 +21,16 @@ body {
 }
 
 .register {
-  width: 100%;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
-  background-color: #ffffff;
 }
 
 .register .left-side {
   box-sizing: border-box;
   padding: 2.7rem 11.6rem 2.7rem 2.9rem;
-  height: 102.4rem;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
@@ -50,7 +48,7 @@ body {
 }
 
 .register-box {
-  margin: 14rem 0rem 23.7rem 0rem;
+  margin: 8% 0rem 20% 0rem;
   width: 40rem;
   height: calc(100% - 38.4rem);
   flex-shrink: 0;
@@ -83,6 +81,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+
 }
 
 .get-started-frame{
@@ -107,7 +106,7 @@ body {
   margin-bottom: 5%;
   box-sizing: border-box;
   padding: 1.9rem 2rem;
-  width: 100%;
+  width: 40rem;
   font-size: 1.7rem;
   font-weight: 900;
   line-height: 1.275;
@@ -173,13 +172,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000;
+  background-color: #115995;
   border-radius: 1rem;
   flex-shrink: 0;
+  border: none;
 }
 
 .create-btn:hover {
-  background-color: #2e2e2e;
+  background-color: #0a3659;
 }
 
 .bottom-phrase {
@@ -195,12 +195,16 @@ body {
   font-size: 1.7rem;
   font-weight: 400;
   line-height: 1.275;
-  color: rgba(0, 0, 0, 0.8000000119);
+  color: rgba(0, 0, 0, 0.841);
   font-family: Abel, 'Source Sans Pro';
   white-space: nowrap;
   flex-shrink: 0;
 }
 
+.input-titles {
+  font-size: 2rem;
+  font-family: Abel, 'Source Sans Pro';
+}
 .login-link {
   font-size: 1.6rem;
   font-weight: 400;
@@ -225,9 +229,14 @@ body {
 }
 
 .register .right-side {
-  width: 72rem;
-  height: 102.4rem;
-  position: relative;
+  box-sizing: border-box;
+  position: absolute; 
+  left: 50%;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('../images/blue-range.svg');
   flex-shrink: 0;
 }
 
@@ -239,10 +248,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-image: url('../images/light-blue-sky.png');
+
 }
 
 .right-description {
@@ -255,7 +261,7 @@ body {
   font-size: 5rem;
   font-weight: 400;
   line-height: 1.275;
-  color: #1a0b0b;
+  color: white;
   font-family: Abel, 'Source Sans Pro';
   white-space: nowrap;
 }
@@ -264,7 +270,17 @@ body {
   font-size: 2.4rem;
   font-weight: 400;
   line-height: 1.275;
-  color: #000000;
+  color: white;
   font-family: Abel, 'Source Sans Pro';
   white-space: nowrap;
 }
+
+.error {
+  margin-right: 0.4rem;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.275;
+	color: #D8000C;
+}
+

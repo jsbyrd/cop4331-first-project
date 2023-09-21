@@ -556,3 +556,23 @@ function checkInput(username, password, fName, lName) {
 	return passCheck;
 
 }
+
+function checkInput(username, password, fName, lName) {
+	
+	var inputCheck = false;
+	if(fName == ''|| lName == '' || username == ' '|| password == ' '){
+		return inputCheck;
+	}
+
+	var regex = /(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}/;
+	
+	var passCheck = false;
+
+	if (regex.test(password) == true) {
+		console.log('VALID PASS');
+		passCheck = true;
+	}
+
+	return passCheck;
+
+}
