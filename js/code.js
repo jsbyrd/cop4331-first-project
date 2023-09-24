@@ -346,13 +346,16 @@ if (event != null) {
 		  updateCell = contactRow.insertCell(4);
 		  deleteCell = contactRow.insertCell(5);
           // Insert corresponding text into cells;
+		  id = contactResultObject.ID;
+		  firstNameCell.setAttribute('id', `firstName${id}`);
+		  lastNameCell.setAttribute('id', `lastName${id}`);
+		  emailCell.setAttribute('id', `email${id}`);
+		  phoneCell.setAttribute('id', `phone${id}`);
+
           firstNameCell.innerHTML = contactResultObject.FirstName;
           lastNameCell.innerHTML = contactResultObject.LastName;
           emailCell.innerHTML = contactResultObject.Email;
           phoneCell.innerHTML = contactResultObject.Phone;
-		  id = contactResultObject.ID;
-		  console.log(id);
-		  
 		  var editImage = document.createElement('img');
 		  editImage.src = 'images/edit.png'; // Set the image source
 		  editImage.alt = 'Image Alt Text'; 
@@ -362,18 +365,27 @@ if (event != null) {
 		  updateButton.appendChild(editImage);
 		  updateButton.classList.add('updateButton');
 		  updateButton.setAttribute('data-hidden-value', id);
-			updateButton.addEventListener('click', (event) => {
-				event.preventDefault();
-				event.stopPropagation();
+		  updateButton.addEventListener('click', (event) => {
+			  event.preventDefault();
+			  event.stopPropagation();
 
-				const form = document.getElementById('updateMe');
-				form.style.display = "block";
-				// Pass the id of the contact in the "open update contact form" button to the "actually update contact" button
-				const contactId = updateButton.getAttribute('data-hidden-value');
-				console.log("button value " + contactId);
-				const contactUpdateButton = document.getElementById('updateContactButton');
-				contactUpdateButton.setAttribute('value', contactId);
-			});
+			  const form = document.getElementById('updateMe');
+			  form.style.display = "block";
+			  // Pass the id of the contact in the "open update contact form" button to the "actually update contact" button
+			  const contactId = updateButton.getAttribute('data-hidden-value');
+			  const firstName = document.getElementById(`firstName${contactId}`).innerText;
+			  const lastName = document.getElementById(`lastName${contactId}`).innerText;
+			  const email = document.getElementById(`email${contactId}`).innerText;
+			  const phone = document.getElementById(`phone${contactId}`).innerText;
+			  console.log(firstName, lastName, email, phone);
+			  document.getElementById("updateTextFirst").value = firstName;
+			  document.getElementById("updateTextLast").value = lastName;
+			  document.getElementById("updateTextEmail").value = email;
+			  document.getElementById("updateTextNumber").value = phone;
+			  console.log("button value " + contactId);
+			  const contactUpdateButton = document.getElementById('updateContactButton');
+			  contactUpdateButton.setAttribute('value', contactId);
+		  });
 
 		  updateCell.appendChild(updateButton);
 
@@ -388,19 +400,19 @@ if (event != null) {
 		  deleteButton.classList.add('deleteButton');
 
 		  deleteButton.addEventListener('click', function(event) {
-				// Prevent the click event from propagating to other elements (e.g., the search button)
-				event.stopPropagation();
+			  // Prevent the click event from propagating to other elements (e.g., the search button)
+			  event.stopPropagation();
 
-				const id = deleteButton.getAttribute('data-hidden-value');
-				console.log("button value" + id);
-				doDeleteContact(id);
-		
-			});
+			  const id = deleteButton.getAttribute('data-hidden-value');
+			  console.log("button value" + id);
+			  doDeleteContact(id);
+
+		  });
 
 		  deleteCell.appendChild(deleteButton);
-			}
-			}
-		};
+	  }
+  }
+};
 		xhr.send(jsonPayload);
 	}
 	catch(err)
