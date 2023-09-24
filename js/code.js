@@ -127,6 +127,10 @@ function doAddContact()
 	let email = document.getElementById("contactTextEmail").value;
 	phoneNumber = removeDashesAndConvertToNumber(phoneNumber);
 
+	if(!validAddContact(contactFirstName, contactLastName, phoneNumber, email)) {
+		document.getElementById("createResult").innerHTML = "Invalid Contact Information";
+		return;
+	}
 	readCookie();
 	
 	console.log(contactFirstName + " " + contactLastName + " "  + phoneNumber + " " + email + " " + userId);
@@ -522,6 +526,69 @@ function readCookie()
 	{
 		window.location.href = "index.html";
 	}
+
+}
+
+function validAddContact(firstName, lastName, phone, email) {
+
+    var fNameErr = lNameErr = phoneErr = emailErr = true;
+
+    if (firstName == "") {
+        console.log("FIRST NAME IS BLANK");
+    }
+    else {
+        console.log("first name IS VALID");
+        fNameErr = false;
+    }
+
+    if (lastName == "") {
+        console.log("LAST NAME IS BLANK");
+    }
+    else {
+        console.log("LAST name IS VALID");
+        lNameErr = false;
+    }
+
+    if (phone == "") {
+        console.log("PHONE IS BLANK");
+    }
+    else {
+        var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+
+        if (regex.test(phone) == false) {
+            console.log("PHONE IS NOT VALID");
+        }
+
+        else {
+
+            console.log("PHONE IS VALID");
+            phoneErr = false;
+        }
+    }
+
+    if (email == "") {
+        console.log("EMAIL IS BLANK");
+    }
+    else {
+        var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+        if (regex.test(email) == false) {
+            console.log("EMAIL IS NOT VALID");
+        }
+
+        else {
+
+            console.log("EMAIL IS VALID");
+            emailErr = false;
+        }
+    }
+
+    if ((phoneErr || emailErr || fNameErr || lNameErr) == true) {
+        return false;
+
+    }
+
+    return true;
 
 }
 
