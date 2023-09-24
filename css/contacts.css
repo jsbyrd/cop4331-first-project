@@ -217,7 +217,7 @@ svg:hover {
   left: 45%;
   background: #438ecd;
   max-width: 350px;
-  padding: 50px 50px 400px 50px;
+  padding: 50px 30px 400px 30px;
   text-align: center;
   box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.744);
 }
@@ -247,7 +247,7 @@ svg:hover {
 
 #addMe input,
 #updateMe input {
-  border-radius: 15px;
+  border-radius: 17px;
   font-family: 'Montserrat';
   outline: 0;
   background: #f2f2f2;
@@ -264,23 +264,6 @@ svg:hover {
   border: 2px solid black;
 }
 
-#addMe input + .checks {
-  position: absolute;
-  right: 5%;
-}
-.checks {
-  margin-top: 3%;
-}
-#addMe input:invalid + .checks::before {
-  content: "✖";
-  color: red;
-}
-
-#addMe input:valid + .checks::before {
-  content: "✓";
-  color: white;
-}
-
 #addMe input[type=text]:invalid {
   border: 2px solid red;
 }
@@ -289,7 +272,6 @@ svg:hover {
 #updateMe input::placeholder {
   color:#438ecd;
 }
-
 #addMe .add-contact-btn2,
 #updateMe .add-contact-btn2 {
   border-radius: 17px;
@@ -664,13 +646,4 @@ table {
 
 .deleteButton img {
   height: 25px;
-}
-
-.error {
-  margin-right: 0.4rem;
-  margin-bottom: 1rem;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.275;
-	color: #D8000C;
 }

@@ -76,29 +76,21 @@
           <form id="addMe">
             <button class="close" onclick="closeForm()">&times;</button>
             <div class="contact-form-headings">First Name</div>
-            <input type="text" id="contactTextFirst" placeholder="First Name" required >
-            <span class="checks"></span>
-            <!--<div class="input-validation"></div>-->
+            <input type="text" id="contactTextFirst" placeholder="First Name" required>
             <div class="contact-form-headings">Last Name</div>
             <input type="text" id="contactTextLast" placeholder="Last Name" required>
-            <span class="checks"></span>
             <div class="contact-form-headings">Phone Number</div>
             <input type="text" id="contactTextNumber" placeholder="XXX-XXX-XXXX" required
               pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
-            <span class="checks"></span>
             <div class="contact-form-headings">Email</div>
-            <div>
-            <input type="text" id="contactTextEmail" style="padding: 13px;" placeholder="name@email.com" 
+            <input type="text" id="contactTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
-            <span class="checks"></span>
-            </div>
-            <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
-            </button>
+              <button type="button" id="addContactButton" class="add-contact-btn2" onclick="doAddContact();"> Add Contact
+              </button>
             <span class="error" id="createResult"></span>
           </form>
         </div>
 
-        
         <!-- update contact form -->
         <div class="updateContacts">
           <form id="updateMe" >
