@@ -127,6 +127,11 @@ function doAddContact()
 	let email = document.getElementById("contactTextEmail").value;
 	phoneNumber = removeDashesAndConvertToNumber(phoneNumber);
 
+	if(!validAddContact(contactFirstName, contactLastName, phoneNumber, email)) {
+		document.getElementById("createResult").innerHTML = "Invalid Contact Information";
+		return;
+	}
+
 	readCookie();
 	
 	console.log(contactFirstName + " " + contactLastName + " "  + phoneNumber + " " + email + " " + userId);
@@ -534,6 +539,69 @@ function readCookie()
 	{
 		window.location.href = "index.html";
 	}
+
+}
+
+function validAddContact(firstName, lastName, phone, email) {
+
+    var fNameErr = lNameErr = phoneErr = emailErr = true;
+
+    if (firstName == "") {
+        console.log("first name is blank");
+    }
+    else {
+        console.log("first name is valid");
+        fNameErr = false;
+    }
+
+    if (lastName == "") {
+        console.log("last name is blank");
+    }
+    else {
+        console.log("last name is valid");
+        lNameErr = false;
+    }
+
+    if (phone == "") {
+        console.log("phone is blank");
+    }
+    else {
+        var regex = /^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$/;
+
+        if (regex.test(phone) == false) {
+            console.log("phone is not valid");
+        }
+
+        else {
+
+            console.log("phone is valid");
+            phoneErr = false;
+        }
+    }
+
+    if (email == "") {
+        console.log("email is blank");
+    }
+    else {
+        var regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+
+        if (regex.test(email) == false) {
+            console.log("email is not valid");
+        }
+
+        else {
+
+            console.log("email is valid");
+            emailErr = false;
+        }
+    }
+
+    if ((phoneErr || emailErr || fNameErr || lNameErr) == true) {
+        return false;
+
+    }
+
+    return true;
 
 }
 
