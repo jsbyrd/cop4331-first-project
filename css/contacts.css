@@ -37,7 +37,6 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  border: solid 0.1rem #000000;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position:  center;
@@ -214,12 +213,13 @@ svg:hover {
   border-radius: 17px;
   position: absolute;
   top: 20%;
-  left: 45%;
+  left: 40%;
   background: #438ecd;
   max-width: 350px;
   padding: 50px 50px 400px 50px;
   text-align: center;
   box-shadow: 0 0 0 99999px rgba(0, 0, 0, 0.744);
+  z-index: 10;
 }
 
 #addMe .close,
@@ -338,7 +338,7 @@ svg:hover {
 
 #contactsTable {
   display: block;
-  height: 500px;
+  height: 600px;
 }
 
 table {
@@ -357,6 +357,12 @@ table {
 #contacts td, #header1, #header2, #header3, #edit, #delete{
   border: 1px solid #55a3dc;
 }
+
+#contacts th {
+  top: 0;
+  position: sticky;
+}
+
 
 #contacts tr:hover {
   background-color: #478fbb;

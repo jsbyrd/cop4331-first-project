@@ -101,10 +101,14 @@
         <div class="updateContacts">
           <form id="updateMe" >
             <button class="close" onclick="closeUpdateContact(event)">&times;</button>
+            <div class="contact-form-headings">First Name</div>
             <input type="text" id="updateTextFirst" placeholder="First Name" required>
+            <div class="contact-form-headings">Last Name</div>
             <input type="text" id="updateTextLast" placeholder="Last Name" required>
+            <div class="contact-form-headings">Phone Number</div>
             <input type="text" id="updateTextNumber" placeholder="XXX-XXX-XXXX" required
               pattern="^[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4}$">
+            <div class="contact-form-headings">Email</div>
             <input type="text" id="updateTextEmail" placeholder="name@email.com"
               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
             <button type="button" id="updateContactButton" class="add-contact-btn2" onclick="doUpdateContact();"> Update Contact
@@ -135,7 +139,6 @@
                 <th id="edit">Edit</th>
                 <th id="delete">Delete</th>
               </tr>
-
             </thread>
             <tbody id="tbody"></tbody>
           </table>
