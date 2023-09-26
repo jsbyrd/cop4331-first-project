@@ -9,6 +9,7 @@
   <title>Login</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel%3A400"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro%3A400"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="./css/login.css"/>
 </head>
 <body>
@@ -24,10 +25,22 @@
             <div class="input-titles">Username</div>
             <input type="text" class="user-input" id="loginName" placeholder="Username" name="username" required/>
             <div class="login-frame3">
-            <div class="input-titles">Password</div>
-            <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required/>
+              <div class="input-titles">Password</div>
+              <input type="password" class="password-input" id="loginPassword" placeholder="Password" name="password" required/>
+              <input type="checkbox" id="checkbox-pass" onclick="showPass()" >
+              <label class="checkpass-label" for="checkbox-pass">Show Password</label>
             </div>
           </form>
+          <script>
+            function showPass() {
+              var x = document.getElementById("loginPassword");
+              if (x.type === "password") {
+                x.type = "text";
+              } else {
+                x.type = "password";
+              }
+            }
+          </script>
           <span class="error" id="loginResult"></span>
           <div class="bottom-frame">
             <button type="button" id="loginButton" class="login-btn" onclick="doLogin()">Login</button>

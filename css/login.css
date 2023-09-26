@@ -84,9 +84,29 @@ body {
   flex-shrink: 0;
   
 }
+.checkpass-label{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Abel, 'Source Sans Pro';
+}
 
+#loginInfo input[type=text]:valid {
+  border: 2.5px solid #55a3dc;
+}
+
+#loginInfo input[type=text]:invalid {
+  border: 2.5px solid rgba(209, 12, 12, 0.778);
+}
+
+#loginInfo input[type=password]:valid {
+  border: 2.5px solid #55a3dc;
+}
+
+#loginInfo input[type=password]:invalid {
+  border: 2.5px solid rgba(209, 12, 12, 0.778);
+}
 .input-titles {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: Abel, 'Source Sans Pro';
   font-weight: 300;
 }
@@ -115,7 +135,7 @@ body {
 }
 
 .password-input {
-  margin: 0rem 8.5rem 3.7rem 0rem;
+  margin: 0rem 8.5rem 1rem 0rem;
   box-sizing: border-box;
   padding: 2rem 2rem 1.8rem 2rem;
   width: 40rem;
@@ -241,7 +261,7 @@ body {
 .error {
   margin-right: 0.4rem;
   margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-top: 5rem;
   font-size: 1.7rem;
   font-weight: 400;
   line-height: 1.275;

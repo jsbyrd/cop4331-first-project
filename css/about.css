@@ -35,7 +35,6 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
-  border: solid 0.1rem #000000;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -49,6 +48,7 @@ body {
   align-items: flex-start;
   flex-shrink: 0;
 }
+
 .about-us-title {
   margin-left: 15%;
   margin-right: 42%;
@@ -67,7 +67,7 @@ body {
   font-weight: 400;
   line-height: 1.2175;
   color: #eeeeee;
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: Poppins, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
   padding: 1.8rem 2.2rem 1.7rem 1rem;
@@ -97,10 +97,10 @@ body {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: Poppins, 'Source Sans Pro';
   font-size: 1.5rem;
   font-weight: 300;
-  color: black;
+  color: #034075;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -108,11 +108,11 @@ body {
 }
 
 .dropdown-content button {
-  font-family: Montserrat, 'Source Sans Pro';
+  font-family: Poppins, 'Source Sans Pro';
   font-size: 1.5rem;
   font-weight: 300;
-  color: black;
-  padding: 12px 100px 12px 16px;
+  color: #034075;
+  padding: 12px 110px 12px 16px;
   display: block;
   border: none;
   border-radius: 0rem 0rem 1rem 1rem;
@@ -148,89 +148,60 @@ body {
   flex-shrink: 0;
 }
 
-.top-circle-row {
-  margin: 0% 15% 0% 20%;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
+/* grid w/images and names */
+.grid-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-gap: 10px;
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 50px;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 40% 40%;
+  grid-gap: 30px;
+  padding: 10px;
+  margin-left: 200px;
+  margin-right: 50px;
+}
+
+.member-item {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #035195;
+  font-family: Poppins, 'Source Sans Pro';
+  padding: 20px 0;
 }
 
 .ellipse-image {
-  margin-right: 12.3rem;
-  width: 19.1rem;
-  height: 17rem;
-  object-fit: contain;
-  vertical-align: top;
-  flex-shrink: 0;
-}
-
-.top-name-row {
-  margin: 1% 10% 10% 20%;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.team-name {
-  margin-right: 19rem;
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #000000;
-  font-family: Poppins, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-#gen-name {
-  margin-left: 15px;
-}
-
-.bottom-circle-row {
-  margin: 0% 10% 2% 14%;
-  width: calc(100% - 42.7rem);
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.bottom-name-row {
-  margin-left: 6%;
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.team-name-2 {
-  margin-right: 20rem;
-  text-align: center;
-  font-size: 1.7rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #000000;
-  font-family: Poppins, 'Source Sans Pro';
-  white-space: nowrap;
-  flex-shrink: 0;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  background-color: #ccf3fb;
 }
 
 .side-bar {
   width: 26.5187rem;
   height: 100%;
   display: block;
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   align-items: flex-end;
 }
+
 .side-frame {
   margin-right: 0.0003rem;
   box-sizing: border-box;
   width: 26.5184rem;
-  height: 102.4711rem;
-  overflow: auto;
+  height: 100%;
+  overflow: hidden;
   /*disables horizontal scroll*/
-  position: fixed;
+  position: absolute;
   /*scroll bar stays in place when user is scrolling*/
   background-color: #599dd5;
 }
@@ -244,6 +215,7 @@ body {
   object-fit: contain;
   vertical-align: top;
 }
+
 .side-options-frame {
   width: 100%;
   height: 96.5745rem;
@@ -264,7 +236,6 @@ body {
 }
 
 .side-options-frame2 {
-  margin: 0rem 0rem 50rem 0rem;
   width: 10.8515rem;
   display: flex;
   flex-direction: column;
@@ -328,12 +299,14 @@ body {
 }
 
 .logout-group {
-  margin: 0rem 12rem 0rem 0rem;
   display: flex;
   align-items: center;
   flex-shrink: 0;
   background-color: #5a9dd6;
   border: none;
+  position: absolute;
+  bottom: 25%;
+  margin-right: 5%;
 }
 
 .logout-group:hover {
@@ -359,7 +332,7 @@ body {
   margin-left: 1rem;
   margin-top: 30%;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 500;
   line-height: 1.5;
   color: #ffffff;

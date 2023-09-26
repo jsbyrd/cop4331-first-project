@@ -118,6 +118,28 @@ body {
   flex-shrink: 0;
 }
 
+.checkpass-label{
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Abel, 'Source Sans Pro';
+}
+
+#signup input[type=text]:valid {
+  border: 2.5px solid #55a3dc;
+}
+
+#signup input[type=text]:invalid {
+  border: 2.5px solid rgba(209, 12, 12, 0.778);
+}
+
+#signup input[type=password]:valid {
+  border: 2.5px solid #55a3dc;
+}
+
+#signup input[type=password]:invalid {
+  border: 2.5px solid rgba(209, 12, 12, 0.778);
+}
+
 #pass-rqmt {
   display:none;
   background: #f1f1f1;
@@ -125,6 +147,7 @@ body {
   position: relative;
   padding: 20px;
   margin-top: 10px;
+  border-radius: 5%;
 }
 
 #pass-rqmt p {
@@ -143,7 +166,7 @@ body {
 }
 
 .invalid {
-  color: red;
+  color: rgb(212, 19, 19);
 }
 
 .invalid:before {
@@ -202,7 +225,7 @@ body {
 }
 
 .input-titles {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: Abel, 'Source Sans Pro';
   font-weight: 300;
 }

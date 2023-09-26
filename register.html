@@ -33,6 +33,18 @@
             <div class="input-titles">Password</div>
             <input type="password" class="input-user" id="password" placeholder="Password" name="password" required
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/>
+            <input type="checkbox" id="checkbox-pass" onclick="showPass()" >
+            <label class="checkpass-label" for="checkbox-pass">Show Password</label>
+            <script>
+              function showPass() {
+                var x = document.getElementById("password");
+                if (x.type === "password") {
+                  x.type = "text";
+                } else {
+                  x.type = "password";
+                }
+              }
+            </script>
             <div id="pass-rqmt">
               <h2>Password must contain the following:</h2>
               <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
