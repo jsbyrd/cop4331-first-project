@@ -71,7 +71,7 @@ body {
   font-weight: 400;
   line-height: 1.2175;
   color: #eeeeee;
-  font-family: Poppins, 'Source Sans Pro';
+  font-family: Montserrat, 'Source Sans Pro';
   white-space: nowrap;
   display: flex;
   padding: 0.5rem 12rem 0.5rem 1rem;
@@ -100,7 +100,7 @@ body {
 
 /* Links inside the dropdown */
 .dropdown-content a {
-  font-family: Poppins, 'Source Sans Pro';
+  font-family: Montserrat, 'Source Sans Pro';
   font-size: 1.5rem;
   font-weight: 300;
   color: #034075;
@@ -111,7 +111,7 @@ body {
 }
 
 .dropdown-content button {
-  font-family: Poppins, 'Source Sans Pro';
+  font-family: Montserrat, 'Source Sans Pro';
   font-size: 1.5rem;
   font-weight: 300;
   color: #034075;
@@ -323,7 +323,7 @@ svg:hover {
 
 #contacts td input {
   border-radius: 17px;
-  font-family: Poppins, 'Source Sans Pro';
+  font-family: Montserrat, 'Source Sans Pro';
   outline: 0;
   background: #ccf3fb;
   width: 100%;
@@ -372,7 +372,7 @@ table {
 #contacts th {
   padding: 1.165rem 1rem 1.165rem 1rem;
   text-align: left;
-  font-family: Poppins, 'Source Sans Pro';
+  font-family: Montserrat, 'Source Sans Pro';
   font-weight: 400;
   font-size: 16px;
   font-weight: bold;
@@ -402,10 +402,10 @@ table {
 #contacts td {
   padding: 10px;
   text-align: left;
-  font-family: 'Montserrat';
+  font-family: Montserrat, 'Source Sans Pro';;
   vertical-align: middle;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 16px;
   
   color: #035195;
   background-color: #ccf3fb;
