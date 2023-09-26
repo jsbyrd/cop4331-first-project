@@ -76,7 +76,7 @@ body {
   font-weight: 400;
   line-height: 1.2575;
   color:  #115995;
-  font-family: Copperplate, 'Source Sans Pro';
+  font-family: Copperplate, 'Sawarabi Mincho', 'Source Sans Pro';
   white-space: nowrap;
 }
 
@@ -91,7 +91,7 @@ body {
   font-weight: 700;
   line-height: 1.2575;
   color: #115995;
-  font-family: Copperplate, 'Source Sans Pro';
+  font-family: Copperplate, 'Sawarabi Mincho','Source Sans Pro';
   white-space: nowrap;
 }
 .login-btn {
@@ -146,7 +146,7 @@ body {
   font-weight: 400;
   line-height: 1.2575;
   color: #ffffffc0;
-  font-family: Copperplate, 'Source Sans Pro';
+  font-family: Copperplate,  'Source Sans Pro';
   flex-shrink: 0;
 }
 .detail-2 {
