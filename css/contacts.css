@@ -242,7 +242,7 @@ svg:hover {
 
 #addMe input::placeholder,
 #updateMe input::placeholder {
-  color:#438ecd;
+  color:#035195;
 }
 
 #addMe input,
@@ -257,7 +257,7 @@ svg:hover {
   padding: 10px;
   box-sizing: border-box;
   font-size: 14px;
-  color:#438ecd;
+  color:#035195;
 }
 
 #addMe input[type=text]:valid {
